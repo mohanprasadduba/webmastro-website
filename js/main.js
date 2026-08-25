@@ -110,7 +110,6 @@
     initGSAP();
     lenis = initSmoothScroll();
 
-    global.MastroComingSoon && global.MastroComingSoon.init();
     global.MastroTheme && global.MastroTheme.init();
     global.MastroNav && global.MastroNav.init();
     global.MastroCursor && global.MastroCursor.init();
