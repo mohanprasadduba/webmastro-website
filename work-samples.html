@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+	<meta charset="utf-8">
+	<!-- Sets the theme before first paint to avoid a flash of the wrong
+	     theme. Always time-of-day based (light 06:00–18:00, dark otherwise)
+	     — resets on every load/refresh, a manual toggle only affects the
+	     current view. Keep in sync with theme.js. -->
+	<script>
+	(function () {
+		console.log('[Theme] now:', new Date());
+		try {
+			var h = new Date().getHours();
+			var theme = (h >= 6 && h < 18) ? 'light' : 'dark';
+			document.documentElement.setAttribute('data-theme', theme);
+		} catch (e) {
+			document.documentElement.setAttribute('data-theme', 'light');
+		}
+	})();
+	</script>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>Work Samples — Web Mastro</title>
+	<meta name="description" content="Browse live preview samples of websites Web Mastro can build for your industry — coffee shops, real estate, healthcare, architecture and more.">
+	<meta name="keywords" content="web design samples, website portfolio, industry website examples, web development agency work">
+	<meta name="author" content="Web Mastro">
+	<link rel="canonical" href="https://webmastro.in/work-samples.html">
+
+	<!-- Open Graph -->
+	<meta property="og:type" content="website">
+	<meta property="og:site_name" content="Web Mastro">
+	<meta property="og:url" content="https://webmastro.in/work-samples.html">
+	<meta property="og:title" content="Work Samples — Web Mastro">
+	<meta property="og:description" content="Browse live preview samples of websites Web Mastro can build for your industry — coffee shops, real estate, healthcare, architecture and more.">
+	<meta property="og:image" content="https://webmastro.in/assets/og/og-image.png">
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="630">
+
+	<!-- Twitter -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="Work Samples — Web Mastro">
+	<meta name="twitter:description" content="Browse live preview samples of websites Web Mastro can build for your industry.">
+	<meta name="twitter:image" content="https://webmastro.in/assets/og/og-image.png">
+
+	<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+	<noscript><link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"></noscript>
+
+	<link rel="stylesheet" href="css/tokens.css">
+	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/components.css">
+	<link rel="stylesheet" href="css/nav.css">
+	<link rel="stylesheet" href="css/final-cta.css">
+	<link rel="stylesheet" href="css/footer.css">
+	<link rel="stylesheet" href="css/work-samples.css">
+	<link rel="stylesheet" href="css/coming-soon.css">
+</head>
+<body>
+	<a class="skip-link" href="#main">Skip to content</a>
+
+	<!-- Coming Soon gate — removes itself once the launch time passes -->
+	<div class="coming-soon" id="coming-soon" role="dialog" aria-modal="true" aria-label="Coming soon">
+		<div class="coming-soon__noise"></div>
+		<div class="coming-soon__inner">
+			<img class="coming-soon__logo" src="asserts/logo-web.png" alt="Web Mastro" width="120" height="39">
+			<span class="coming-soon__eyebrow">Coming Soon</span>
+			<p class="coming-soon__title">We're Coming to Change the Way Businesses Go Digital</p>
+			<p class="coming-soon__sub">We're building something designed to change the way businesses experience technology. From creating powerful digital experiences to solving the challenges that hold businesses back, Web Mastro is coming with a vision to make technology simpler, smarter, and more accessible. This is just the beginning — take a glimpse at what we're building and stay tuned for what's next.</p>
+			<div class="coming-soon__countdown">
+				<div class="coming-soon__unit">
+					<span class="coming-soon__unit-value" data-unit="days">00</span>
+					<span class="coming-soon__unit-label">Days</span>
+				</div>
+				<div class="coming-soon__unit">
+					<span class="coming-soon__unit-value" data-unit="hours">00</span>
+					<span class="coming-soon__unit-label">Hours</span>
+				</div>
+				<div class="coming-soon__unit">
+					<span class="coming-soon__unit-value" data-unit="minutes">00</span>
+					<span class="coming-soon__unit-label">Minutes</span>
+				</div>
+				<div class="coming-soon__unit">
+					<span class="coming-soon__unit-value" data-unit="seconds">00</span>
+					<span class="coming-soon__unit-label">Seconds</span>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<header class="nav is-scrolled">
+		<a class="nav__logo" href="index.html" aria-label="Web Mastro — home">
+			<img src="asserts/logo-web.png" alt="Web Mastro" width="120" height="39">
+		</a>
+		<nav class="nav__links" aria-label="Primary">
+			<a class="nav__link" href="index.html#top">Home</a>
+			<a class="nav__link" href="index.html#advantages">Why Web Mastro</a>
+			<a class="nav__link" href="index.html#process">Process</a>
+			<a class="nav__link" href="work-samples.html">Work Samples</a>
+			<a class="nav__link" href="index.html#about">About</a>
+			<a class="nav__link" href="index.html#contact">Contact</a>
+		</nav>
+		<div class="nav__right">
+			<a class="nav__cta" href="index.html#contact">
+				Start a Project
+				<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+			</a>
+			<button class="theme-toggle" id="theme-toggle" type="button">
+				<svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+				<svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+			</button>
+			<button class="nav__toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+				<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+			</button>
+		</div>
+	</header>
+
+	<div class="nav__mobile" id="mobile-menu">
+		<div class="nav__mobile-links">
+			<a class="nav__mobile-link" href="index.html#top">Home</a>
+			<a class="nav__mobile-link" href="index.html#advantages">Why Web Mastro</a>
+			<a class="nav__mobile-link" href="index.html#process">Process</a>
+			<a class="nav__mobile-link" href="work-samples.html">Work Samples</a>
+			<a class="nav__mobile-link" href="index.html#about">About</a>
+			<a class="nav__mobile-link" href="index.html#contact">Contact</a>
+		</div>
+		<a class="btn btn--primary nav__mobile-cta" href="index.html#contact">
+			Start a Project
+			<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+		</a>
+	</div>
+
+	<main id="main">
+		<!-- Work Samples Hero -->
+		<section class="ws-hero" aria-label="Work samples introduction">
+			<div class="container ws-hero__grid">
+				<div class="ws-hero__text">
+					<span class="ws-hero__badge">Work Samples</span>
+					<h1 class="ws-hero__title">What We Can Build For Your Industry</h1>
+					<p class="ws-hero__sub">These are sample builds, not client projects — a preview of the range and quality you can expect. Each one below is a live, working page — open it in a new tab and click around.</p>
+				</div>
+
+				<div class="ws-orbit" aria-hidden="true">
+					<div class="ws-orbit__ring"></div>
+					<div class="ws-orbit__hub">
+						<img src="asserts/logo-web.png" alt="" width="120" height="39">
+					</div>
+
+					<div class="ws-orbit__node ws-orbit__node--1">
+						<span class="ws-orbit__icon" title="Coffee Shop">
+							<img src="asserts/coffeeshop.png" alt="" width="44" height="44">
+						</span>
+					</div>
+					<div class="ws-orbit__node ws-orbit__node--2">
+						<span class="ws-orbit__icon" title="Primary School">
+							<img src="asserts/school.png" alt="" width="44" height="44">
+						</span>
+					</div>
+					<div class="ws-orbit__node ws-orbit__node--3">
+						<span class="ws-orbit__icon" title="Real Estate">
+							<img src="asserts/realestate.png" alt="" width="44" height="44">
+						</span>
+					</div>
+					<div class="ws-orbit__node ws-orbit__node--4">
+						<span class="ws-orbit__icon" title="Industrial &amp; Manufacturing">
+							<img src="asserts/factory.png" alt="" width="44" height="44">
+						</span>
+					</div>
+					<div class="ws-orbit__node ws-orbit__node--5">
+						<span class="ws-orbit__icon" title="Architecture &amp; Interiors">
+							<img src="asserts/interiorDesign.png" alt="" width="44" height="44">
+						</span>
+					</div>
+					<div class="ws-orbit__node ws-orbit__node--6">
+						<span class="ws-orbit__icon" title="Health &amp; Medical Care">
+							<img src="asserts/hospital.png" alt="" width="44" height="44">
+						</span>
+					</div>
+					<div class="ws-orbit__node ws-orbit__node--7">
+						<span class="ws-orbit__icon" title="Restaurant &amp; Cafe">
+							<img src="asserts/resturant.png" alt="" width="44" height="44">
+						</span>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Samples list -->
+		<section class="section" aria-label="Sample websites by industry">
+			<div class="container">
+				<div class="ws-list">
+
+					<article class="ws-card" data-reveal>
+						<div class="ws-card__preview">
+							<iframe src="samples/Coffo-1.0.0/index.html" title="Coffo — Coffee Shop preview" loading="lazy" tabindex="-1"></iframe>
+						</div>
+						<div class="ws-card__body">
+							<p class="eyebrow">Coffee Shop</p>
+							<h3 class="ws-card__name">Coffo</h3>
+							<p class="ws-card__desc">A warm, inviting online home for a specialty coffee brand.</p>
+							<a class="btn btn--ghost-light" href="samples/Coffo-1.0.0/index.html" target="_blank" rel="noopener noreferrer">
+								Live Preview
+								<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+							</a>
+						</div>
+					</article>
+
+					<article class="ws-card" data-reveal>
+						<div class="ws-card__preview">
+							<iframe src="samples/adward-master/index.html" title="Adward — Primary School preview" loading="lazy" tabindex="-1"></iframe>
+						</div>
+						<div class="ws-card__body">
+							<p class="eyebrow">Primary School</p>
+							<h3 class="ws-card__name">Adward</h3>
+							<p class="ws-card__desc">A friendly, playful site for a primary school and its teachers.</p>
+							<a class="btn btn--ghost-light" href="samples/adward-master/index.html" target="_blank" rel="noopener noreferrer">
+								Live Preview
+								<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+							</a>
+						</div>
+					</article>
+
+					<article class="ws-card" data-reveal>
+						<div class="ws-card__preview">
+							<iframe src="samples/garo-estate-master/index.html" title="Garo Estate — Real Estate preview" loading="lazy" tabindex="-1"></iframe>
+						</div>
+						<div class="ws-card__body">
+							<p class="eyebrow">Real Estate</p>
+							<h3 class="ws-card__name">Garo Estate</h3>
+							<p class="ws-card__desc">A polished listings showcase for a real estate agency.</p>
+							<a class="btn btn--ghost-light" href="samples/garo-estate-master/index.html" target="_blank" rel="noopener noreferrer">
+								Live Preview
+								<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+							</a>
+						</div>
+					</article>
+
+					<article class="ws-card" data-reveal>
+						<div class="ws-card__preview">
+							<iframe src="samples/industrial-master/index.html" title="Industrial — Manufacturing preview" loading="lazy" tabindex="-1"></iframe>
+						</div>
+						<div class="ws-card__body">
+							<p class="eyebrow">Industrial &amp; Manufacturing</p>
+							<h3 class="ws-card__name">Industrial</h3>
+							<p class="ws-card__desc">A bold, credible presence for a steel fabrication company.</p>
+							<a class="btn btn--ghost-light" href="samples/industrial-master/index.html" target="_blank" rel="noopener noreferrer">
+								Live Preview
+								<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+							</a>
+						</div>
+					</article>
+
+					<article class="ws-card" data-reveal>
+						<div class="ws-card__preview">
+							<iframe src="samples/klift-master/index.html" title="Klift — Architecture preview" loading="lazy" tabindex="-1"></iframe>
+						</div>
+						<div class="ws-card__body">
+							<p class="eyebrow">Architecture &amp; Interiors</p>
+							<h3 class="ws-card__name">Klift</h3>
+							<p class="ws-card__desc">A refined portfolio for an architecture and interior design studio.</p>
+							<a class="btn btn--ghost-light" href="samples/klift-master/index.html" target="_blank" rel="noopener noreferrer">
+								Live Preview
+								<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+							</a>
+						</div>
+					</article>
+
+					<article class="ws-card" data-reveal>
+						<div class="ws-card__preview">
+							<iframe src="samples/novena/index.html" title="Novena — Healthcare preview" loading="lazy" tabindex="-1"></iframe>
+						</div>
+						<div class="ws-card__body">
+							<p class="eyebrow">Health &amp; Medical Care</p>
+							<h3 class="ws-card__name">Novena</h3>
+							<p class="ws-card__desc">A calm, trustworthy site for a healthcare clinic.</p>
+							<a class="btn btn--ghost-light" href="samples/novena/index.html" target="_blank" rel="noopener noreferrer">
+								Live Preview
+								<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+							</a>
+						</div>
+					</article>
+
+					<article class="ws-card" data-reveal>
+						<div class="ws-card__preview">
+							<iframe src="samples/templatemo_558_klassy_cafe/index.html" title="Klassy Cafe — Restaurant preview" loading="lazy" tabindex="-1"></iframe>
+						</div>
+						<div class="ws-card__body">
+							<p class="eyebrow">Restaurant &amp; Cafe</p>
+							<h3 class="ws-card__name">Klassy Cafe</h3>
+							<p class="ws-card__desc">An appetizing showcase for a restaurant and café brand.</p>
+							<a class="btn btn--ghost-light" href="samples/templatemo_558_klassy_cafe/index.html" target="_blank" rel="noopener noreferrer">
+								Live Preview
+								<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+							</a>
+						</div>
+					</article>
+
+				</div>
+			</div>
+		</section>
+
+		<!-- CTA -->
+		<section class="section section-dark final-cta" aria-label="Start a project">
+			<div class="final-cta__ribbon-layer"></div>
+			<div class="final-cta__content">
+				<h2 class="final-cta__heading" data-reveal>READY FOR<br>YOUR OWN?</h2>
+				<p class="final-cta__sub" data-reveal>Tell us your vision. We'll turn it into something remarkable.</p>
+				<div class="final-cta__actions">
+					<a class="btn btn--primary magnetic-wrap" href="index.html#contact" data-magnetic>
+						Start a Project
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+					</a>
+					<a class="btn btn--ghost magnetic-wrap" href="index.html" data-magnetic>
+						Back to Home
+					</a>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<footer class="site-footer">
+		<div class="site-footer__inner">
+			<div class="site-footer__bottom">
+				<p class="site-footer__copyright">© 2026 Web Mastro. All rights reserved.</p>
+				<img src="asserts/logoWithName.png" alt="Web Mastro" width="150" height="100">
+			</div>
+		</div>
+	</footer>
+
+	<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+
+	<script src="js/modules/coming-soon.js"></script>
+	<script src="js/modules/motion-prefs.js"></script>
+	<script src="js/modules/theme.js"></script>
+	<script src="js/modules/ribbon.js"></script>
+	<script src="js/modules/nav.js"></script>
+	<script src="js/modules/cursor.js"></script>
+	<script src="js/modules/cursor-glow.js"></script>
+	<script src="js/modules/magnetic.js"></script>
+	<script src="js/modules/reveal.js"></script>
+	<script src="js/modules/final-cta.js"></script>
+	<script src="js/modules/footer.js"></script>
+	<script src="js/modules/work-samples.js"></script>
+	<script>
+		document.documentElement.classList.remove('no-js');
+		document.documentElement.classList.add('js');
+
+		document.addEventListener('DOMContentLoaded', function () {
+			if (window.gsap && window.ScrollTrigger) {
+				gsap.registerPlugin(ScrollTrigger);
+			}
+
+			window.MastroComingSoon && window.MastroComingSoon.init();
+			window.MastroTheme && window.MastroTheme.init();
+			window.MastroNav && window.MastroNav.init();
+			window.MastroCursor && window.MastroCursor.init();
+			window.MastroCursorGlow && window.MastroCursorGlow.init();
+			window.MastroMagnetic && window.MastroMagnetic.init();
+			window.MastroFinalCTA && window.MastroFinalCTA.init();
+			window.MastroFooter && window.MastroFooter.init();
+			window.MastroReveal && window.MastroReveal.init();
+			window.MastroWorkSamples && window.MastroWorkSamples.init();
+		});
+	</script>
+</body>
+</html>

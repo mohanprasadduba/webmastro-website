@@ -1,0 +1,125 @@
+/* ==========================================================================
+   Why Does Your Business Need a Real Website?
+   ========================================================================== */
+
+.why-website-section {
+  position: relative;
+  overflow: hidden;
+  background: var(--off-white);
+}
+
+/* Ambient blurred color glow so the glass columns below have something to
+   actually refract — plain flat backgrounds give backdrop-filter nothing
+   to work with. */
+.why-website-section::before {
+  content: '';
+  position: absolute;
+  inset: -10%;
+  background:
+    radial-gradient(circle at 12% 15%, rgba(10, 130, 243, 0.22), transparent 42%),
+    radial-gradient(circle at 88% 70%, rgba(241, 48, 99, 0.18), transparent 42%);
+  filter: blur(70px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.why-website-section .container {
+  position: relative;
+  z-index: 1;
+}
+
+.why-website-section__heading {
+  font-size: var(--fs-h2);
+  max-width: 18ch;
+  margin-block: var(--space-2) var(--space-2);
+  transition: opacity var(--dur-slow) var(--ease-mastro), transform var(--dur-slow) var(--ease-mastro);
+}
+
+.why-website-section__copy {
+  font-family: var(--font-body);
+  font-size: var(--fs-body-lg);
+  color: var(--text-secondary);
+  line-height: var(--lh-relaxed);
+  max-width: 64ch;
+  margin-bottom: var(--space-6);
+}
+
+.why-website-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-6);
+}
+
+.why-website-pills span {
+  font-family: var(--font-display);
+  font-size: var(--fs-small);
+  font-weight: 600;
+  color: var(--text-primary);
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px;
+  border-radius: var(--radius-full);
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+  border: 1px solid var(--glass-border);
+}
+
+.why-website-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--space-4);
+  margin-bottom: var(--space-8);
+}
+
+.why-website-card {
+  padding: clamp(22px, 2.4vw, 30px);
+  border-radius: var(--radius-lg);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+}
+
+.why-website-card__dot {
+  display: block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  margin-bottom: var(--space-3);
+}
+
+.why-website-card:nth-child(1) .why-website-card__dot { background: var(--mastro-blue); }
+.why-website-card:nth-child(2) .why-website-card__dot { background: var(--mastro-purple); }
+.why-website-card:nth-child(3) .why-website-card__dot { background: var(--mastro-magenta); }
+.why-website-card:nth-child(4) .why-website-card__dot { background: var(--mastro-pink); }
+
+.why-website-card h3 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: var(--fs-body-lg);
+  color: var(--text-primary);
+  margin-bottom: var(--space-2);
+}
+
+.why-website-card p {
+  font-family: var(--font-body);
+  font-size: var(--fs-body);
+  color: var(--text-secondary);
+  line-height: var(--lh-relaxed);
+}
+
+@media (max-width: 900px) {
+  .why-website-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .why-website-grid {
+    grid-template-columns: 1fr;
+  }
+}
+

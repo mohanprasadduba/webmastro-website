@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+	<meta charset="utf-8">
+	<!-- Sets the theme before first paint to avoid a flash of the wrong
+	     theme. Always time-of-day based (light 06:00–18:00, dark otherwise)
+	     — resets on every load/refresh, a manual toggle only affects the
+	     current view. Keep in sync with theme.js. -->
+	<script>
+	(function () {
+		console.log('[Theme] now:', new Date());
+		try {
+			var h = new Date().getHours();
+			var theme = (h >= 6 && h < 18) ? 'light' : 'dark';
+			document.documentElement.setAttribute('data-theme', theme);
+		} catch (e) {
+			document.documentElement.setAttribute('data-theme', 'light');
+		}
+	})();
+	</script>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>Case Study Template — Web Mastro</title>
+	<meta name="description" content="A template case study page showing how Web Mastro presents project work — Challenge, Strategy, Design, Development, SEO and Outcome.">
+	<meta name="author" content="Web Mastro">
+	<meta name="robots" content="noindex">
+	<link rel="canonical" href="https://webmastro.in/case-study.html">
+
+	<!-- Open Graph -->
+	<meta property="og:type" content="website">
+	<meta property="og:site_name" content="Web Mastro">
+	<meta property="og:url" content="https://webmastro.in/case-study.html">
+	<meta property="og:title" content="Case Study Template — Web Mastro">
+	<meta property="og:description" content="A template case study page showing how Web Mastro presents project work — Challenge, Strategy, Design, Development, SEO and Outcome.">
+	<meta property="og:image" content="https://webmastro.in/assets/og/og-image.png">
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="630">
+
+	<!-- Twitter -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="Case Study Template — Web Mastro">
+	<meta name="twitter:description" content="A template case study page showing how Web Mastro presents project work.">
+	<meta name="twitter:image" content="https://webmastro.in/assets/og/og-image.png">
+
+	<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+	<noscript><link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"></noscript>
+
+	<link rel="stylesheet" href="css/tokens.css">
+	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/components.css">
+	<link rel="stylesheet" href="css/nav.css">
+	<link rel="stylesheet" href="css/final-cta.css">
+	<link rel="stylesheet" href="css/footer.css">
+	<link rel="stylesheet" href="css/case-study.css">
+	<link rel="stylesheet" href="css/coming-soon.css">
+</head>
+<body>
+	<a class="skip-link" href="#main">Skip to content</a>
+
+	<!-- Coming Soon gate — removes itself once the launch time passes -->
+	<div class="coming-soon" id="coming-soon" role="dialog" aria-modal="true" aria-label="Coming soon">
+		<div class="coming-soon__noise"></div>
+		<div class="coming-soon__inner">
+			<img class="coming-soon__logo" src="asserts/logo-web.png" alt="Web Mastro" width="120" height="39">
+			<span class="coming-soon__eyebrow">Coming Soon</span>
+			<p class="coming-soon__title">We're Coming to Change the Way Businesses Go Digital</p>
+			<p class="coming-soon__sub">We're building something designed to change the way businesses experience technology. From creating powerful digital experiences to solving the challenges that hold businesses back, Web Mastro is coming with a vision to make technology simpler, smarter, and more accessible. This is just the beginning — take a glimpse at what we're building and stay tuned for what's next.</p>
+			<div class="coming-soon__countdown">
+				<div class="coming-soon__unit">
+					<span class="coming-soon__unit-value" data-unit="days">00</span>
+					<span class="coming-soon__unit-label">Days</span>
+				</div>
+				<div class="coming-soon__unit">
+					<span class="coming-soon__unit-value" data-unit="hours">00</span>
+					<span class="coming-soon__unit-label">Hours</span>
+				</div>
+				<div class="coming-soon__unit">
+					<span class="coming-soon__unit-value" data-unit="minutes">00</span>
+					<span class="coming-soon__unit-label">Minutes</span>
+				</div>
+				<div class="coming-soon__unit">
+					<span class="coming-soon__unit-value" data-unit="seconds">00</span>
+					<span class="coming-soon__unit-label">Seconds</span>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="cs-banner">
+		This is a template case study page — the content below is a placeholder, not a real client project. <a href="index.html">Back to Web Mastro</a>
+	</div>
+
+	<header class="nav is-scrolled">
+		<a class="nav__logo" href="/" aria-label="Web Mastro — home">
+			<img src="asserts/logo-web.png" alt="Web Mastro" width="120" height="39">
+		</a>
+		<nav class="nav__links" aria-label="Primary">
+			<a class="nav__link" href="/#top">Home</a>
+			<a class="nav__link" href="/#advantages">Why Web Mastro</a>
+			<a class="nav__link" href="/#why-website">Why Website?</a>
+			<a class="nav__link" href="/#process">Process</a>
+			<a class="nav__link" href="work-samples.html">Work Samples</a>
+			<a class="nav__link" href="/#about">About</a>
+			<a class="nav__link" href="/#contact">Contact</a>
+		</nav>
+		<div class="nav__right">
+			<a class="nav__cta" href="/#contact">
+				Start a Project
+				<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+			</a>
+			<button class="theme-toggle" id="theme-toggle" type="button">
+				<svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+				<svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+			</button>
+			<button class="nav__toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+				<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+			</button>
+		</div>
+	</header>
+
+	<div class="nav__mobile" id="mobile-menu">
+		<div class="nav__mobile-links">
+			<a class="nav__mobile-link" href="/#top">Home</a>
+			<a class="nav__mobile-link" href="/#advantages">Why Web Mastro</a>
+			<a class="nav__mobile-link" href="/#why-website">Why Website?</a>
+			<a class="nav__mobile-link" href="/#process">Process</a>
+			<a class="nav__mobile-link" href="work-samples.html">Work Samples</a>
+			<a class="nav__mobile-link" href="/#about">About</a>
+			<a class="nav__mobile-link" href="/#contact">Contact</a>
+		</div>
+		<a class="btn btn--primary nav__mobile-cta" href="/#contact">
+			Start a Project
+			<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+		</a>
+	</div>
+
+	<main id="main">
+		<!-- Case Study Hero -->
+		<section class="cs-hero" aria-label="Project overview">
+			<div class="container">
+				<span class="cs-hero__badge">Case Study Template</span>
+				<h1 class="cs-hero__title">Project One — a placeholder case study</h1>
+
+				<div class="cs-hero__meta">
+					<div class="cs-hero__meta-item">
+						<p class="cs-hero__meta-label">Industry</p>
+						<p>Industry / Category</p>
+					</div>
+					<div class="cs-hero__meta-item">
+						<p class="cs-hero__meta-label">Services</p>
+						<p>Website Design, Development, SEO</p>
+					</div>
+					<div class="cs-hero__meta-item">
+						<p class="cs-hero__meta-label">Technologies</p>
+						<p>To be added</p>
+					</div>
+				</div>
+
+				<div class="cs-visual" id="cs-hero-visual"></div>
+			</div>
+		</section>
+
+		<!-- Content blocks -->
+		<section class="section" aria-label="Case study details">
+			<div class="container">
+				<div class="cs-block" data-reveal>
+					<p class="cs-block__num">01 — Challenge</p>
+					<h2>The challenge</h2>
+					<p>This section will describe the business problem the client came to us with — what wasn't working, and what was at stake.</p>
+				</div>
+
+				<div class="cs-block" data-reveal>
+					<p class="cs-block__num">02 — Strategy</p>
+					<h2>The strategy</h2>
+					<p>This section will explain the positioning, structure and content strategy we defined before any design work began.</p>
+				</div>
+
+				<div class="cs-block" data-reveal>
+					<p class="cs-block__num">03 — Design</p>
+					<h2>The design</h2>
+					<p>This section will walk through the visual system and user experience decisions, alongside real screenshots of the finished design.</p>
+				</div>
+
+				<div class="cs-block" data-reveal>
+					<p class="cs-block__num">04 — Development</p>
+					<h2>The build</h2>
+					<p>This section will cover how the site was engineered — the stack, performance work and any technical constraints we solved for.</p>
+				</div>
+
+				<div class="cs-block" data-reveal>
+					<p class="cs-block__num">05 — SEO</p>
+					<h2>Technical SEO</h2>
+					<p>This section will describe the on-page and technical SEO work done alongside the build, not bolted on afterward.</p>
+				</div>
+
+				<div class="cs-block" data-reveal>
+					<p class="cs-block__num">06 — Outcome</p>
+					<h2>The outcome</h2>
+					<p>This section will describe what changed for the client once the site launched. We only publish outcomes we can verify — no results are shown here yet because this is a placeholder project.</p>
+				</div>
+
+				<div class="cs-gallery" aria-label="Project gallery placeholders">
+					<div class="cs-gallery__item"><span>Gallery — placeholder</span></div>
+					<div class="cs-gallery__item"><span>Gallery — placeholder</span></div>
+					<div class="cs-gallery__item"><span>Gallery — placeholder</span></div>
+					<div class="cs-gallery__item"><span>Gallery — placeholder</span></div>
+				</div>
+			</div>
+		</section>
+
+		<!-- CTA -->
+		<section class="section section-dark final-cta" aria-label="Start a project">
+			<div class="final-cta__ribbon-layer"></div>
+			<div class="final-cta__content">
+				<h2 class="final-cta__heading" data-reveal>LIKE WHAT<br>YOU SEE?</h2>
+				<p class="final-cta__sub" data-reveal>Tell us your vision. We'll turn it into something remarkable.</p>
+				<div class="final-cta__actions">
+					<a class="btn btn--primary magnetic-wrap" href="/#contact" data-magnetic>
+						Start a Project
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+					</a>
+					<a class="btn btn--ghost magnetic-wrap" href="index.html" data-magnetic>
+						Back to Home
+					</a>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<footer class="site-footer">
+		<div class="site-footer__inner">
+			<div class="site-footer__bottom">
+				<p class="site-footer__copyright">© 2026 Web Mastro. All rights reserved.</p>
+				<img src="asserts/logoWithName.png" alt="Web Mastro" width="150" height="100">
+			</div>
+		</div>
+	</footer>
+
+	<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+
+	<script src="js/modules/coming-soon.js"></script>
+	<script src="js/modules/motion-prefs.js"></script>
+	<script src="js/modules/theme.js"></script>
+	<script src="js/modules/ribbon.js"></script>
+	<script src="js/modules/nav.js"></script>
+	<script src="js/modules/cursor.js"></script>
+	<script src="js/modules/cursor-glow.js"></script>
+	<script src="js/modules/magnetic.js"></script>
+	<script src="js/modules/reveal.js"></script>
+	<script src="js/modules/final-cta.js"></script>
+	<script src="js/modules/footer.js"></script>
+	<script>
+		document.documentElement.classList.remove('no-js');
+		document.documentElement.classList.add('js');
+
+		document.addEventListener('DOMContentLoaded', function () {
+			if (window.gsap && window.ScrollTrigger) {
+				gsap.registerPlugin(ScrollTrigger);
+			}
+
+			window.MastroComingSoon && window.MastroComingSoon.init();
+			window.MastroTheme && window.MastroTheme.init();
+			window.MastroNav && window.MastroNav.init();
+			window.MastroCursor && window.MastroCursor.init();
+			window.MastroCursorGlow && window.MastroCursorGlow.init();
+			window.MastroMagnetic && window.MastroMagnetic.init();
+			window.MastroFinalCTA && window.MastroFinalCTA.init();
+			window.MastroFooter && window.MastroFooter.init();
+			window.MastroReveal && window.MastroReveal.init();
+
+			// Hero + gallery decorative ribbons
+			var heroMount = document.getElementById('cs-hero-visual');
+			if (heroMount && window.MastroRibbon) {
+				var heroRibbon = window.MastroRibbon.createRibbonSVG({ strokeWidth: 6, opacity: 0.85 });
+				heroRibbon.path.style.strokeDashoffset = '0';
+				heroMount.appendChild(heroRibbon.svg);
+			}
+			document.querySelectorAll('.cs-gallery__item').forEach(function (item) {
+				if (!window.MastroRibbon) return;
+				var r = window.MastroRibbon.createRibbonSVG({
+					strokeWidth: 6,
+					opacity: 0.5,
+					stops: window.MastroRibbon.MUTED_STOPS
+				});
+				r.path.style.strokeDashoffset = '0';
+				item.insertBefore(r.svg, item.firstChild);
+			});
+		});
+	</script>
+</body>
+</html>

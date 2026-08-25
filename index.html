@@ -1,0 +1,1178 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+
+<head>
+	<meta charset="utf-8">
+	<!-- Sets the theme before first paint to avoid a flash of the wrong
+	     theme. Always time-of-day based (light 06:00–18:00, dark otherwise)
+	     — resets on every load/refresh, a manual toggle only affects the
+	     current view. Keep in sync with theme.js. -->
+	<script>
+		(function () {
+			console.log('[Theme] now:', new Date());
+			try {
+				var h = new Date().getHours();
+				var theme = (h >= 6 && h < 18) ? 'light' : 'dark';
+				document.documentElement.setAttribute('data-theme', theme);
+			} catch (e) {
+				document.documentElement.setAttribute('data-theme', 'light');
+			}
+		})();
+	</script>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>Web Mastro — Web Design &amp; Development Agency</title>
+	<meta name="description"
+		content="Web Mastro builds high-performance websites that look exceptional, launch fast, cost less and make growing your business easier. Best designs. Fast delivery. Less cost. Hassle-free process.">
+	<meta name="keywords"
+		content="web development agency, website design, custom website development, business website, landing page design, e-commerce website">
+	<meta name="author" content="Web Mastro">
+	<link rel="canonical" href="https://webmastro.in/">
+
+	<!-- Open Graph -->
+	<meta property="og:type" content="website">
+	<meta property="og:site_name" content="Web Mastro">
+	<meta property="og:url" content="https://webmastro.in/">
+	<meta property="og:title" content="Web Mastro — Web Design &amp; Development Agency">
+	<meta property="og:description"
+		content="Best designs. Fast delivery. Less cost. Hassle-free process. We build high-performance websites that help businesses grow.">
+	<meta property="og:image" content="https://webmastro.in/assets/og/og-image.png">
+	<meta property="og:image:width" content="1200">
+	<meta property="og:image:height" content="630">
+
+	<!-- Twitter -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta name="twitter:title" content="Web Mastro — Your Vision, Our Craft">
+	<meta name="twitter:description" content="Best designs. Fast delivery. Less cost. Hassle-free process.">
+	<meta name="twitter:image" content="https://webmastro.in/assets/og/og-image.png">
+
+	<!-- Favicon -->
+	<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+
+	<!-- Fonts -->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link
+		href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap"
+		rel="stylesheet" media="print" onload="this.media='all'">
+	<noscript>
+		<link
+			href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap"
+			rel="stylesheet">
+	</noscript>
+
+	<!-- Design system (bundled — see css/bundle.home.css header) -->
+	<link rel="stylesheet" href="css/bundle.home.css">
+
+	<!-- Organization schema -->
+	<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@type": "Organization",
+		"name": "Web Mastro",
+		"slogan": "Your Vision, Our Craft",
+		"url": "https://webmastro.in/",
+		"logo": "https://webmastro.in/asserts/logo-transparent.png",
+		"description": "Web Mastro is a web design and development agency building high-performance websites — best designs, fast delivery, less cost, hassle-free process.",
+		"telephone": "+91-91778-76802",
+		"email": "webmastrooffical@gmail.com",
+		"sameAs": [
+			"https://www.instagram.com/webmastro.in/",
+			"https://wa.me/919177876802"
+		]
+	}
+	</script>
+</head>
+
+<body>
+	<a class="skip-link" href="#main">Skip to content</a>
+
+	<!-- Coming Soon gate — removes itself once the launch time passes -->
+	<div class="coming-soon" id="coming-soon" role="dialog" aria-modal="true" aria-label="Coming soon">
+		<div class="coming-soon__noise"></div>
+		<div class="coming-soon__inner">
+			<img class="coming-soon__logo" src="asserts/logo-web.png" alt="Web Mastro" width="120" height="39">
+			<span class="coming-soon__eyebrow">Coming Soon</span>
+			<p class="coming-soon__title">We're Coming to Change the Way Businesses Go Digital</p>
+			<p class="coming-soon__sub">We're building something designed to change the way businesses experience technology. From creating powerful digital experiences to solving the challenges that hold businesses back, Web Mastro is coming with a vision to make technology simpler, smarter, and more accessible. This is just the beginning — take a glimpse at what we're building and stay tuned for what's next.</p>
+			<div class="coming-soon__countdown">
+				<div class="coming-soon__unit">
+					<span class="coming-soon__unit-value" data-unit="days">00</span>
+					<span class="coming-soon__unit-label">Days</span>
+				</div>
+				<div class="coming-soon__unit">
+					<span class="coming-soon__unit-value" data-unit="hours">00</span>
+					<span class="coming-soon__unit-label">Hours</span>
+				</div>
+				<div class="coming-soon__unit">
+					<span class="coming-soon__unit-value" data-unit="minutes">00</span>
+					<span class="coming-soon__unit-label">Minutes</span>
+				</div>
+				<div class="coming-soon__unit">
+					<span class="coming-soon__unit-value" data-unit="seconds">00</span>
+					<span class="coming-soon__unit-label">Seconds</span>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Preloader -->
+	<div class="preloader" role="status" aria-label="Loading Web Mastro">
+		<div class="preloader__inner">
+			<div class="preloader__ribbon"></div>
+			<div class="preloader__word">Web Mastro</div>
+			<div class="preloader__tagline">Your Vision, Our Craft</div>
+			<div class="preloader__bar">
+				<div class="preloader__bar-fill"></div>
+			</div>
+		</div>
+	</div>
+
+	<!-- Navigation -->
+	<header class="nav">
+		<a class="nav__logo" href="#top" aria-label="Web Mastro — home">
+			<img src="asserts/logo-web.png" alt="Web Mastro" width="120" height="39">
+		</a>
+
+		<nav class="nav__links" aria-label="Primary">
+			<a class="nav__link" href="#top">Home</a>
+			<a class="nav__link" href="#advantages">Why Web Mastro</a>
+			<a class="nav__link" href="#process">Process</a>
+			<a class="nav__link" href="work-samples.html">Work Samples</a>
+			<a class="nav__link" href="#about">About</a>
+			<a class="nav__link" href="#contact">Contact</a>
+		</nav>
+
+		<div class="nav__right">
+			<a class="nav__cta magnetic-wrap" href="#contact" data-magnetic>
+				Start a Project
+				<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+					stroke-linejoin="round" aria-hidden="true">
+					<path d="M5 12h14M13 5l7 7-7 7" />
+				</svg>
+			</a>
+			<button class="theme-toggle" id="theme-toggle" type="button" data-magnetic>
+				<svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" fill="none"
+					stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+					aria-hidden="true">
+					<circle cx="12" cy="12" r="4" />
+					<path
+						d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41" />
+				</svg>
+				<svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" fill="none"
+					stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+					aria-hidden="true">
+					<path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z" />
+				</svg>
+			</button>
+			<button class="nav__toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+				<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+					stroke-linejoin="round" aria-hidden="true">
+					<path d="M3 6h18M3 12h18M3 18h18" />
+				</svg>
+			</button>
+		</div>
+	</header>
+
+	<div class="nav__mobile" id="mobile-menu">
+		<div class="nav__mobile-links">
+			<a class="nav__mobile-link" href="#top">Home</a>
+			<a class="nav__mobile-link" href="#advantages">Why Web Mastro</a>
+			<a class="nav__mobile-link" href="#process">Process</a>
+			<a class="nav__mobile-link" href="work-samples.html">Work Samples</a>
+			<a class="nav__mobile-link" href="#about">About</a>
+			<a class="nav__mobile-link" href="#contact">Contact</a>
+		</div>
+		<a class="btn btn--primary nav__mobile-cta" href="#contact">
+			Start a Project
+			<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+				stroke-linejoin="round" aria-hidden="true">
+				<path d="M5 12h14M13 5l7 7-7 7" />
+			</svg>
+		</a>
+	</div>
+
+	<main id="main">
+		<div id="top"></div>
+
+		<!-- Hero -->
+		<section class="hero" aria-label="Introduction">
+			<div class="hero__noise"></div>
+			<div class="hero__ribbon-layer"></div>
+
+			<div class="hero__content">
+				<div class="hero__text">
+					<h1 class="hero__headline">
+						<span class="reveal-line"><span>YOUR VISION.</span></span>
+						<span class="reveal-line"><span>OUR CRAFT.</span></span>
+					</h1>
+
+					<p class="hero__sub">More <span class="hero__sub-highlight">Reach</span>. More <span class="hero__sub-highlight">Clients</span>. More <span class="hero__sub-highlight">Growth</span>. We make it happen with high-performance
+						websites built to deliver results.</p>
+
+					<div class="hero__actions">
+						<a class="btn btn--primary magnetic-wrap" href="#contact" data-magnetic>
+							Start A Project
+							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+								stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+								<path d="M5 12h14M13 5l7 7-7 7" />
+							</svg>
+						</a>
+						<a class="btn btn--ghost magnetic-wrap" href="#work" data-magnetic>
+							How We Make It Work
+						</a>
+					</div>
+
+					<div class="hero__benefits" aria-label="Why Web Mastro" href="#advantages">
+						<span>Best Designs</span>
+						<span>Fast Delivery</span>
+						<span>Less Cost</span>
+						<span>Hassle-Free Process</span>
+					</div>
+
+					<div class="offer-banner" data-reveal>
+						<span class="offer-banner__tag">
+							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+								stroke-linejoin="round" aria-hidden="true">
+								<path
+									d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z" />
+								<circle cx="7.5" cy="7.5" r="1.5" />
+							</svg>
+						</span>
+						<span class="offer-banner__badge">50% OFF</span>
+						<span class="offer-banner__text">on your project quote — exclusive launch offer for our very first
+							client</span>
+					</div>
+
+					
+				</div>
+
+				<div class="hero__visual">
+					<div class="hero__visual-box">
+						<img src="asserts/heroImage.jpg"
+							alt="Illustration of two people exchanging a star, representing a successful client partnership"
+							width="597" height="402" loading="lazy">
+					</div>
+				</div>
+			</div>
+			<div class="hero__scroll">
+						<span>Scroll</span>
+						<span class="hero__scroll-line"></span>
+					</div>
+		</section>
+
+		<!-- Why Does Your Business Need a Real Website? -->
+		<section id="why-website" data-nav-section="why-website" class="section why-website-section"
+			aria-label="Why your business needs a website">
+			<div class="container">
+				<p class="eyebrow">Why A Website ?</p>
+				<h2 class="why-website-section__heading" data-reveal>Why Does Your Business Need a Proper Website?</h2>
+				<p class="why-website-section__copy" data-reveal>Your website is more than just an online presence. It
+					helps people discover your business, understand what you offer, build confidence in your brand, and
+					see why you are the right choice. A proper website turns attention into trust—and trust into
+					clients.</p>
+
+				<div class="why-website-grid">
+					<div class="why-website-card" data-reveal>
+						<span class="why-website-card__dot"></span>
+						<h3>Reach More</h3>
+						<p>Get discovered by more people and expand your business beyond your existing network.</p>
+					</div>
+					<div class="why-website-card" data-reveal>
+						<span class="why-website-card__dot"></span>
+						<h3>Build Trust</h3>
+						<p>Create a strong first impression and give potential clients confidence in your business.</p>
+					</div>
+					<div class="why-website-card" data-reveal>
+						<span class="why-website-card__dot"></span>
+						<h3>Stand Out</h3>
+						<p>Showcase what makes you different and give people a clear reason to choose you.</p>
+					</div>
+					<div class="why-website-card" data-reveal>
+						<span class="why-website-card__dot"></span>
+						<h3>Win Clients</h3>
+						<p>Turn interested visitors into valuable enquiries, customers, and long-term clients.</p>
+					</div>
+				</div>
+
+				<a class="btn btn--primary-dark magnetic-wrap" href="#contact" data-magnetic>
+					Build My Website
+					<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+						stroke-linejoin="round" aria-hidden="true">
+						<path d="M5 12h14M13 5l7 7-7 7" />
+					</svg>
+				</a>
+			</div>
+		</section>
+
+		<!-- 4 Core Advantages -->
+		<section id="advantages" class="section advantages-section" aria-label="The Web Mastro advantage">
+			<div class="advantages-section__ribbon-layer"></div>
+			<div class="container">
+				<p class="eyebrow">Why It's Worth It</p>
+				<h2 class="advantages-section__heading" data-reveal>Why Web Mastro </h2>
+
+				<div class="advantages-grid">
+					<div class="advantage-card" tabindex="0">
+						<span class="advantage-card__num">01</span>
+						<h3 class="advantage-card__title">Best Designs</h3>
+						<p class="advantage-card__tag">Your website is often the first impression.</p>
+						<div class="advantage-card__body-wrap">
+							<div class="advantage-card__body-inner">
+								<div class="advantage-card__body">
+									<p>We create modern, custom digital experiences designed around your business
+										instead of forcing your business into a generic template.</p>
+									<ul>
+										<li>Modern UI</li>
+										<li>Strong typography</li>
+										<li>Responsive design</li>
+										<li>User-friendly experience</li>
+										<li>Brand-focused presentation</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="advantage-card" tabindex="0">
+						<span class="advantage-card__num">02</span>
+						<h3 class="advantage-card__title">Fast Delivery</h3>
+						<p class="advantage-card__tag">Your business shouldn't wait forever to go online.</p>
+						<div class="advantage-card__body-wrap">
+							<div class="advantage-card__body-inner">
+								<div class="advantage-card__body">
+									<p>Our streamlined workflow reduces unnecessary delays and keeps every stage focused
+										on getting your website ready.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="advantage-card" tabindex="0">
+						<span class="advantage-card__num">03</span>
+						<h3 class="advantage-card__title">Less Cost</h3>
+						<p class="advantage-card__tag">Professional doesn't have to mean expensive.</p>
+						<div class="advantage-card__body-wrap">
+							<div class="advantage-card__body-inner">
+								<div class="advantage-card__body">
+									<p>We keep the process lean and focus your budget on what actually matters —
+										professional websites without unnecessary agency overhead.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<div class="advantage-card" tabindex="0">
+						<span class="advantage-card__num">04</span>
+						<h3 class="advantage-card__title">Hassle-Free</h3>
+						<p class="advantage-card__tag">You don't need to understand technology to build a website.</p>
+						<div class="advantage-card__body-wrap">
+							<div class="advantage-card__body-inner">
+								<div class="advantage-card__body">
+									<p>You provide the vision. We handle the craft. Communication stays simple and the
+										client journey stays easy to understand.</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- From Design to Digital Impact -->
+		<section id="work" class="section section-dark impact-journey-section" aria-label="From design to digital impact">
+			<div class="container">
+				<p class="eyebrow">How We Make It Work</p>
+				<h2 class="impact-journey-section__heading" data-reveal>From Design to Digital Impact.</h2>
+				<p class="impact-journey-section__sub" data-reveal>A great website needs more than good visuals. We
+					combine design, strategy, technology and usability to create a website that actually works for your
+					business.</p>
+
+				<div class="stepper stepper--horizontal" data-stepper>
+					<div class="stepper__track">
+						<div class="stepper__track-fill"></div>
+					</div>
+					<ol class="stepper__steps">
+						<li class="stepper__step">
+							<span class="stepper__dot"></span>
+							<div class="process-step" data-reveal>
+								<div class="process-step__icon">
+									<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+										stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+										<circle cx="12" cy="12" r="3" />
+										<path d="M2.5 12S6 5.5 12 5.5 21.5 12 21.5 12 18 18.5 12 18.5 2.5 12 2.5 12Z" />
+									</svg>
+								</div>
+								<h3 class="process-step__title">Looks Good</h3>
+								<p class="process-step__desc">Make the first impression count. We create a visual
+									experience that makes your business look professional, modern and trustworthy.</p>
+								<span class="process-step__num">01</span>
+							</div>
+						</li>
+						<li class="stepper__step">
+							<span class="stepper__dot"></span>
+							<div class="process-step" data-reveal>
+								<div class="process-step__icon">
+									<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+										stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+										<path d="M12 2 4.5 5v6c0 5 3.2 8.7 7.5 11 4.3-2.3 7.5-6 7.5-11V5Z" />
+										<path d="m9 12 2 2 4-4.5" />
+									</svg>
+								</div>
+								<h3 class="process-step__title">Builds Trust</h3>
+								<p class="process-step__desc">Give customers confidence. Clear content, intuitive
+									navigation and thoughtful UX help visitors understand your business quickly.</p>
+								<span class="process-step__num">02</span>
+							</div>
+						</li>
+						<li class="stepper__step">
+							<span class="stepper__dot"></span>
+							<div class="process-step" data-reveal>
+								<div class="process-step__icon">
+									<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+										stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+										<polygon points="13 2 4 14 11 14 10 22 20 10 13 10 13 2" />
+									</svg>
+								</div>
+								<h3 class="process-step__title">Works Fast</h3>
+								<p class="process-step__desc">Don't make customers wait. We build responsive, efficient
+									websites designed for a smooth experience across devices.</p>
+								<span class="process-step__num">03</span>
+							</div>
+						</li>
+						<li class="stepper__step">
+							<span class="stepper__dot"></span>
+							<div class="process-step" data-reveal>
+								<div class="process-step__icon">
+									<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+										stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+										<circle cx="11" cy="11" r="7" />
+										<path d="m21 21-4.35-4.35" />
+									</svg>
+								</div>
+								<h3 class="process-step__title">Gets Found</h3>
+								<p class="process-step__desc">A foundation for discovery. Clean structure, useful
+									content and SEO-ready development help search engines understand your site.</p>
+								<span class="process-step__num">04</span>
+							</div>
+						</li>
+						<li class="stepper__step">
+							<span class="stepper__dot"></span>
+							<div class="process-step" data-reveal>
+								<div class="process-step__icon">
+									<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+										stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+										<path d="M4 4 11 20l2.5-7L20 11 4 4Z" />
+									</svg>
+								</div>
+								<h3 class="process-step__title">Gets Action</h3>
+								<p class="process-step__desc">Turn visitors into opportunities. Clear calls-to-action
+									and simple journeys make it easy to contact your business.</p>
+								<span class="process-step__num">05</span>
+							</div>
+						</li>
+						<li class="stepper__step">
+							<span class="stepper__dot"></span>
+							<div class="process-step" data-reveal>
+								<div class="process-step__icon">
+									<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+										stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+										<polyline points="3 17 9 11 13 15 21 7" />
+										<polyline points="15 7 21 7 21 13" />
+									</svg>
+								</div>
+								<h3 class="process-step__title">Built to Grow</h3>
+								<p class="process-step__desc">Your website should grow with your business — built so
+									future pages and features can be added as you grow.</p>
+								<span class="process-step__num">06</span>
+							</div>
+						</li>
+					</ol>
+				</div>
+			</div>
+		</section>
+
+		<!-- The Simple Web Mastro Process -->
+		<section id="process" data-nav-section="process" class="section simple-process-section"
+			aria-label="The Web Mastro process">
+			<div class="container">
+				<p class="eyebrow">Hassle-Free by Process</p>
+				<h2 class="simple-process-section__heading" data-reveal>From Your Vision to Your Live Website.</h2>
+				<p class="simple-process-section__sub" data-reveal>No complicated process. No unnecessary meetings. No
+					confusing technical decisions. Just a clear path from idea to launch.</p>
+
+				<div class="process-flow">
+					<svg class="process-flow-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 420" width="100%"
+						height="100%" aria-hidden="true" focusable="false">
+						<defs>
+							<style>
+								@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&amp;display=swap');
+
+								text {
+									font-family: 'Inter', system-ui, -apple-system, sans-serif;
+								}
+
+								.main-title {
+									font-size: 28px;
+									font-weight: 700;
+									fill: #e2e8f0;
+									letter-spacing: 3px;
+									text-transform: uppercase;
+								}
+
+								.step-num {
+									font-weight: 800;
+									font-size: 60px;
+									dominant-baseline: central;
+								}
+
+								.circle-title {
+									font-size: 20px;
+									font-weight: 700;
+									text-anchor: middle;
+								}
+
+								.body-header {
+									font-size: 15px;
+									font-weight: 700;
+									fill: var(--text-primary);
+									text-anchor: middle;
+								}
+
+								.body-desc {
+									font-size: 12.5px;
+									font-weight: 400;
+									fill: var(--text-secondary);
+									text-anchor: middle;
+									line-height: 1.4;
+								}
+
+								.tagline {
+									font-size: 13px;
+									font-weight: 600;
+									font-style: italic;
+									text-anchor: middle;
+								}
+
+								.pf-circle {
+									fill: var(--off-white);
+									stroke: var(--border-light);
+								}
+
+								.pf-blue {
+									--pf: #1a5fb4;
+								}
+
+								.pf-teal {
+									--pf: #007a66;
+								}
+
+								.pf-green {
+									--pf: #2e7d42;
+								}
+
+								.pf-amber {
+									--pf: #8a5a00;
+								}
+
+								.pf-red {
+									--pf: #c62839;
+								}
+
+								:root[data-theme="dark"] .pf-blue {
+									--pf: #2a8bf2;
+								}
+
+								:root[data-theme="dark"] .pf-teal {
+									--pf: #00c9a7;
+								}
+
+								:root[data-theme="dark"] .pf-green {
+									--pf: #88d498;
+								}
+
+								:root[data-theme="dark"] .pf-amber {
+									--pf: #ffc048;
+								}
+
+								:root[data-theme="dark"] .pf-red {
+									--pf: #ff6b6b;
+								}
+							</style>
+
+							<!-- Drop Shadow Filter -->
+							<filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+								<feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#000000"
+									flood-opacity="0.4" />
+							</filter>
+						</defs>
+
+						<!-- Background -->
+						<!-- <rect width="1600" height="500" fill="#1e232d" /> -->
+
+						<!-- Process Steps Container -->
+						<!-- Centers:
+					       Step 1: X=230, Y=380
+					       Step 2: X=510, Y=380
+					       Step 3: X=790, Y=380
+					       Step 4: X=1070, Y=380
+					       Step 5: X=1350, Y=380
+					  -->
+
+						<!-- ==================== STEP 1 ==================== -->
+						<g class="pf-blue" transform="translate(270, 139) scale(1.12)">
+							<!-- Arc & Dashed Lines -->
+							<!-- Top Arc (Blue: var(--pf)) -->
+							<path d="M -90,-25 A 93.41,93.41 0 0,1 90,-25" fill="none" stroke="var(--pf)"
+								stroke-width="12" stroke-linecap="round" />
+							<!-- Bottom Dashed Arc -->
+							<path d="M -85,35 A 91.92,91.92 0 0,0 85,35" fill="none" stroke="var(--pf)" stroke-width="2"
+								stroke-dasharray="6,6" opacity="0.6" />
+							<path d="M -95,45 A 105.12,105.12 0 0,0 95,45" fill="none" stroke="var(--pf)"
+								stroke-width="1.5" stroke-dasharray="4,4" opacity="0.3" />
+
+							<!-- Big Number behind/left -->
+							<text x="-120" y="5" class="step-num" fill="var(--pf)" opacity="0.4"
+								text-anchor="middle">1</text>
+
+							<!-- Main Circle -->
+							<circle class="pf-circle" cx="0" cy="0" r="85" filter="url(#shadow)" stroke-width="2" />
+
+							<!-- Icon: Vision / Search -->
+							<g transform="translate(0, -22)" stroke="var(--pf)" stroke-width="3.5" fill="none"
+								stroke-linecap="round" stroke-linejoin="round">
+								<circle cx="-3" cy="-3" r="14" />
+								<line x1="7" y1="7" x2="18" y2="18" />
+								<path d="M-3,-9 L-3,-13 M-9,-3 L-13,-3 M3,-3 L7,-3 M-3,3 L-3,7" stroke-width="2"
+									opacity="0.7" />
+							</g>
+
+							<!-- Title inside circle -->
+							<text x="0" y="32" class="circle-title" fill="var(--pf)">Vision</text>
+
+							<!-- Content Below Circle -->
+							<g transform="translate(0, 140)">
+								<text x="0" y="0" class="body-header">01 — Tell Us Your Vision</text>
+								<text x="0" y="24" class="body-desc">You tell us about your business,</text>
+								<text x="0" y="42" class="body-desc">goals, requirements &amp; preferences.</text>
+								<text x="0" y="60" class="body-desc">No technical knowledge needed.</text>
+								<text x="0" y="90" class="tagline" fill="var(--pf)">"You bring the vision"</text>
+							</g>
+						</g>
+
+						<!-- ==================== STEP 2 ==================== -->
+						<g class="pf-teal" transform="translate(540, 139) scale(1.12)">
+							<!-- Bottom Arc (Teal: var(--pf)) -->
+							<path d="M -90,25 A 93.41,93.41 0 0,0 90,25" fill="none" stroke="var(--pf)"
+								stroke-width="12" stroke-linecap="round" />
+							<!-- Top Dashed Arc -->
+							<path d="M -85,-35 A 91.92,91.92 0 0,1 85,-35" fill="none" stroke="var(--pf)"
+								stroke-width="2" stroke-dasharray="6,6" opacity="0.6" />
+							<path d="M -95,-45 A 105.12,105.12 0 0,1 95,-45" fill="none" stroke="var(--pf)"
+								stroke-width="1.5" stroke-dasharray="4,4" opacity="0.3" />
+
+							<!-- Big Number behind/left -->
+							<text x="-125" y="5" class="step-num" fill="var(--pf)" opacity="0.4"
+								text-anchor="middle">2</text>
+
+							<!-- Main Circle -->
+							<circle class="pf-circle" cx="0" cy="0" r="85" filter="url(#shadow)" stroke-width="2" />
+
+							<!-- Icon: Lightbulb / Sample -->
+							<g transform="translate(0, -22)" stroke="var(--pf)" stroke-width="3" fill="none"
+								stroke-linecap="round" stroke-linejoin="round">
+								<path
+									d="M -12,-5 C -12,-15 12,-15 12,-5 C 12,2 5,7 5,14 L -5,14 C -5,7 -12,2 -12,-5 Z" />
+								<line x1="-4" y1="19" x2="4" y2="19" stroke-width="3" />
+								<line x1="-2" y1="24" x2="2" y2="24" stroke-width="2" />
+								<line x1="0" y1="-20" x2="0" y2="-24" />
+								<line x1="-16" y1="-16" x2="-12" y2="-12" />
+								<line x1="16" y1="-16" x2="12" y2="-12" />
+							</g>
+
+							<!-- Title inside circle -->
+							<text x="0" y="32" class="circle-title" fill="var(--pf)">Quote</text>
+
+							<!-- Content Below Circle -->
+							<g transform="translate(0, 140)">
+								<text x="0" y="0" class="body-header">02 — Sample + Clear Quote</text>
+								<text x="0" y="24" class="body-desc">We present a suitable sample,</text>
+								<text x="0" y="42" class="body-desc">explain scope, and provide clear</text>
+								<text x="0" y="60" class="body-desc">quotation &amp; estimated timeline.</text>
+								<text x="0" y="90" class="tagline" fill="var(--pf)">"See direction, then decide"</text>
+							</g>
+						</g>
+
+						<!-- ==================== STEP 3 ==================== -->
+						<g class="pf-green" transform="translate(810, 139) scale(1.12)">
+							<!-- Top Arc (Green: var(--pf)) -->
+							<path d="M -90,-25 A 93.41,93.41 0 0,1 90,-25" fill="none" stroke="var(--pf)"
+								stroke-width="12" stroke-linecap="round" />
+							<!-- Bottom Dashed Arc -->
+							<path d="M -85,35 A 91.92,91.92 0 0,0 85,35" fill="none" stroke="var(--pf)" stroke-width="2"
+								stroke-dasharray="6,6" opacity="0.6" />
+							<path d="M -95,45 A 105.12,105.12 0 0,0 95,45" fill="none" stroke="var(--pf)"
+								stroke-width="1.5" stroke-dasharray="4,4" opacity="0.3" />
+
+							<!-- Big Number behind/left -->
+							<text x="-120" y="5" class="step-num" fill="var(--pf)" opacity="0.4"
+								text-anchor="middle">3</text>
+
+							<!-- Main Circle -->
+							<circle class="pf-circle" cx="0" cy="0" r="85" filter="url(#shadow)" stroke-width="2" />
+
+							<!-- Icon: Gear / Design Finalize -->
+							<g transform="translate(0, -22)" stroke="var(--pf)" stroke-width="3" fill="none"
+								stroke-linecap="round" stroke-linejoin="round">
+								<circle cx="0" cy="0" r="7" />
+								<path
+									d="M0,-16 L0,-12 M0,12 L0,16 M-16,0 L-12,0 M12,0 L16,0 M-11,-11 L-8,-8 M8,8 L11,11 M-11,11 L-8,8 M8,-8 L11,-11"
+									stroke-width="3.5" />
+								<circle cx="0" cy="0" r="14" stroke-dasharray="4,3" stroke-width="1.5" />
+							</g>
+
+							<!-- Title inside circle -->
+							<text x="0" y="32" class="circle-title" fill="var(--pf)">Design</text>
+
+							<!-- Content Below Circle -->
+							<g transform="translate(0, 140)">
+								<text x="0" y="0" class="body-header">03 — Finalize Design</text>
+								<text x="0" y="24" class="body-desc">We finalize design, content, structure</text>
+								<text x="0" y="42" class="body-desc">&amp; features together so both sides</text>
+								<text x="0" y="60" class="body-desc">are aligned before development.</text>
+								<text x="0" y="90" class="tagline" fill="var(--pf)">"Aligned before building"</text>
+							</g>
+						</g>
+
+						<!-- ==================== STEP 4 ==================== -->
+						<g class="pf-amber" transform="translate(1080, 139) scale(1.12)">
+							<!-- Bottom Arc (Amber/Yellow: var(--pf)) -->
+							<path d="M -90,25 A 93.41,93.41 0 0,0 90,25" fill="none" stroke="var(--pf)"
+								stroke-width="12" stroke-linecap="round" />
+							<!-- Top Dashed Arc -->
+							<path d="M -85,-35 A 91.92,91.92 0 0,1 85,-35" fill="none" stroke="var(--pf)"
+								stroke-width="2" stroke-dasharray="6,6" opacity="0.6" />
+							<path d="M -95,-45 A 105.12,105.12 0 0,1 95,-45" fill="none" stroke="var(--pf)"
+								stroke-width="1.5" stroke-dasharray="4,4" opacity="0.3" />
+
+							<!-- Big Number behind/left -->
+							<text x="-125" y="5" class="step-num" fill="var(--pf)" opacity="0.4"
+								text-anchor="middle">4</text>
+
+							<!-- Main Circle -->
+							<circle class="pf-circle" cx="0" cy="0" r="85" filter="url(#shadow)" stroke-width="2" />
+
+							<!-- Icon: Code/Build -->
+							<g transform="translate(0, -22)" stroke="var(--pf)" stroke-width="3" fill="none"
+								stroke-linecap="round" stroke-linejoin="round">
+								<polyline points="-5,-7 -12,0 -5,7" />
+								<line x1="-3" y1="9" x2="3" y2="-9" />
+								<polyline points="5,-7 12,0 5,7" />
+							</g>
+
+							<!-- Title inside circle -->
+							<text x="0" y="32" class="circle-title" fill="var(--pf)">Build</text>
+
+							<!-- Content Below Circle -->
+							<g transform="translate(0, 140)">
+								<text x="0" y="0" class="body-header">04 — Build &amp; Go Live</text>
+								<text x="0" y="24" class="body-desc">We handle development, responsive</text>
+								<text x="0" y="42" class="body-desc">implementation, testing &amp; tweaks</text>
+								<text x="0" y="60" class="body-desc">— then your website goes live.</text>
+								<text x="0" y="90" class="tagline" fill="var(--pf)">"Launch with confidence"</text>
+							</g>
+						</g>
+
+						<!-- ==================== STEP 5 ==================== -->
+						<g class="pf-red" transform="translate(1350, 139) scale(1.12)">
+							<!-- Top Arc (Red/Orange: var(--pf)) -->
+							<path d="M -90,-25 A 93.41,93.41 0 0,1 90,-25" fill="none" stroke="var(--pf)"
+								stroke-width="12" stroke-linecap="round" />
+							<!-- Bottom Dashed Arc -->
+							<path d="M -85,35 A 91.92,91.92 0 0,0 85,35" fill="none" stroke="var(--pf)" stroke-width="2"
+								stroke-dasharray="6,6" opacity="0.6" />
+							<path d="M -95,45 A 105.12,105.12 0 0,0 95,45" fill="none" stroke="var(--pf)"
+								stroke-width="1.5" stroke-dasharray="4,4" opacity="0.3" />
+
+							<!-- Big Number behind/left -->
+							<text x="-120" y="5" class="step-num" fill="var(--pf)" opacity="0.4"
+								text-anchor="middle">5</text>
+
+							<!-- Main Circle -->
+							<circle class="pf-circle" cx="0" cy="0" r="85" filter="url(#shadow)" stroke-width="2" />
+
+							<!-- Icon: Target / Goal / Maintain -->
+							<g transform="translate(0, -22)" stroke="var(--pf)" stroke-width="3" fill="none"
+								stroke-linecap="round" stroke-linejoin="round">
+								<circle cx="0" cy="0" r="16" />
+								<circle cx="0" cy="0" r="10" />
+								<circle cx="0" cy="0" r="4" fill="var(--pf)" />
+								<path d="M 8,-8 L 16,-16 M 12,-16 L 16,-16 L 16,-12" stroke-width="2.5" />
+							</g>
+
+							<!-- Title inside circle -->
+							<text x="0" y="32" class="circle-title" fill="var(--pf)">Maintain</text>
+
+							<!-- Content Below Circle -->
+							<g transform="translate(0, 140)">
+								<text x="0" y="0" class="body-header">05 — Maintain — If Needed</text>
+								<text x="0" y="24" class="body-desc">We're still here after launch</text>
+								<text x="0" y="42" class="body-desc">for content updates, design changes</text>
+								<text x="0" y="60" class="body-desc">or technical improvements.</text>
+								<text x="0" y="90" class="tagline" fill="var(--pf)">"Still here after launch"</text>
+							</g>
+						</g>
+
+					</svg>
+					<ol class="pf-steps">
+						<li class="pf-step pf-blue">
+							<svg class="pf-step-icon" viewBox="0 0 200 200" aria-hidden="true" focusable="false">
+								<g transform="translate(100, 100)">
+									<path d="M -90,-25 A 93.41,93.41 0 0,1 90,-25" fill="none" stroke="var(--pf)"
+										stroke-width="12" stroke-linecap="round" />
+									<circle class="pf-circle" cx="0" cy="0" r="85" stroke-width="2" />
+									<g transform="translate(0, -5)" stroke="var(--pf)" stroke-width="3.5" fill="none"
+										stroke-linecap="round" stroke-linejoin="round">
+										<circle cx="-3" cy="-3" r="14" />
+										<line x1="7" y1="7" x2="18" y2="18" />
+										<path d="M-3,-9 L-3,-13 M-9,-3 L-13,-3 M3,-3 L7,-3 M-3,3 L-3,7" stroke-width="2"
+											opacity="0.7" />
+									</g>
+								</g>
+							</svg>
+							<div class="pf-step-text">
+								<h3>01 — Tell Us Your Vision</h3>
+								<p>You tell us about your business, goals, requirements and preferences. No technical
+									knowledge needed.</p>
+								<span class="pf-step-tagline">"You bring the vision"</span>
+							</div>
+						</li>
+						<li class="pf-step pf-teal">
+							<svg class="pf-step-icon" viewBox="0 0 200 200" aria-hidden="true" focusable="false">
+								<g transform="translate(100, 100)">
+									<path d="M -90,25 A 93.41,93.41 0 0,0 90,25" fill="none" stroke="var(--pf)"
+										stroke-width="12" stroke-linecap="round" />
+									<circle class="pf-circle" cx="0" cy="0" r="85" stroke-width="2" />
+									<g transform="translate(0, -5)" stroke="var(--pf)" stroke-width="3" fill="none"
+										stroke-linecap="round" stroke-linejoin="round">
+										<path
+											d="M -12,-5 C -12,-15 12,-15 12,-5 C 12,2 5,7 5,14 L -5,14 C -5,7 -12,2 -12,-5 Z" />
+										<line x1="-4" y1="19" x2="4" y2="19" stroke-width="3" />
+										<line x1="-2" y1="24" x2="2" y2="24" stroke-width="2" />
+										<line x1="0" y1="-20" x2="0" y2="-24" />
+										<line x1="-16" y1="-16" x2="-12" y2="-12" />
+										<line x1="16" y1="-16" x2="12" y2="-12" />
+									</g>
+								</g>
+							</svg>
+							<div class="pf-step-text">
+								<h3>02 — Sample + Clear Quote</h3>
+								<p>We present a suitable sample, explain scope, and provide a clear quotation and
+									estimated timeline.</p>
+								<span class="pf-step-tagline">"See direction, then decide"</span>
+							</div>
+						</li>
+						<li class="pf-step pf-green">
+							<svg class="pf-step-icon" viewBox="0 0 200 200" aria-hidden="true" focusable="false">
+								<g transform="translate(100, 100)">
+									<path d="M -90,-25 A 93.41,93.41 0 0,1 90,-25" fill="none" stroke="var(--pf)"
+										stroke-width="12" stroke-linecap="round" />
+									<circle class="pf-circle" cx="0" cy="0" r="85" stroke-width="2" />
+									<g transform="translate(0, -5)" stroke="var(--pf)" stroke-width="3" fill="none"
+										stroke-linecap="round" stroke-linejoin="round">
+										<circle cx="0" cy="0" r="7" />
+										<path
+											d="M0,-16 L0,-12 M0,12 L0,16 M-16,0 L-12,0 M12,0 L16,0 M-11,-11 L-8,-8 M8,8 L11,11 M-11,11 L-8,8 M8,-8 L11,-11"
+											stroke-width="3.5" />
+										<circle cx="0" cy="0" r="14" stroke-dasharray="4,3" stroke-width="1.5" />
+									</g>
+								</g>
+							</svg>
+							<div class="pf-step-text">
+								<h3>03 — Finalize Design</h3>
+								<p>We finalize design, content, structure and features together so both sides are
+									aligned before development.</p>
+								<span class="pf-step-tagline">"Aligned before building"</span>
+							</div>
+						</li>
+						<li class="pf-step pf-amber">
+							<svg class="pf-step-icon" viewBox="0 0 200 200" aria-hidden="true" focusable="false">
+								<g transform="translate(100, 100)">
+									<path d="M -90,25 A 93.41,93.41 0 0,0 90,25" fill="none" stroke="var(--pf)"
+										stroke-width="12" stroke-linecap="round" />
+									<circle class="pf-circle" cx="0" cy="0" r="85" stroke-width="2" />
+									<g transform="translate(0, -5)" stroke="var(--pf)" stroke-width="3" fill="none"
+										stroke-linecap="round" stroke-linejoin="round">
+										<polyline points="-8,-8 -17,0 -8,8" />
+										<line x1="-3" y1="10" x2="3" y2="-10" />
+										<polyline points="8,-8 17,0 8,8" />
+									</g>
+								</g>
+							</svg>
+							<div class="pf-step-text">
+								<h3>04 — Build &amp; Go Live</h3>
+								<p>We handle development, responsive implementation, testing and tweaks — then your
+									website goes live.</p>
+								<span class="pf-step-tagline">"Launch with confidence"</span>
+							</div>
+						</li>
+						<li class="pf-step pf-red">
+							<svg class="pf-step-icon" viewBox="0 0 200 200" aria-hidden="true" focusable="false">
+								<g transform="translate(100, 100)">
+									<path d="M -90,-25 A 93.41,93.41 0 0,1 90,-25" fill="none" stroke="var(--pf)"
+										stroke-width="12" stroke-linecap="round" />
+									<circle class="pf-circle" cx="0" cy="0" r="85" stroke-width="2" />
+									<g transform="translate(0, -5)" stroke="var(--pf)" stroke-width="3" fill="none"
+										stroke-linecap="round" stroke-linejoin="round">
+										<circle cx="0" cy="0" r="16" />
+										<circle cx="0" cy="0" r="10" />
+										<circle cx="0" cy="0" r="4" fill="var(--pf)" />
+										<path d="M 8,-8 L 16,-16 M 12,-16 L 16,-16 L 16,-12" stroke-width="2.5" />
+									</g>
+								</g>
+							</svg>
+							<div class="pf-step-text">
+								<h3>05 — Maintain — If Needed</h3>
+								<p>We're still here after launch for content updates, design changes or technical
+									improvements.</p>
+								<span class="pf-step-tagline">"Still here after launch"</span>
+							</div>
+						</li>
+					</ol>
+				</div>
+
+			</div>
+		</section>
+
+		<!-- About Web Mastro -->
+		<section id="about" data-nav-section="about" class="section about-section" aria-label="About Web Mastro">
+			<div class="about-section__ribbon-layer"></div>
+			<div class="container about-section__grid">
+				<div>
+					<p class="eyebrow">About Web Mastro</p>
+					<h2 class="about-section__heading" data-reveal>Your Vision. Our Craft.</h2>
+					<p class="about-section__lead" data-reveal>Businesses deserve better websites without unnecessary
+						complexity.</p>
+					<p class="about-section__copy" data-reveal>Web Mastro combines design, development and practical
+						digital thinking to create websites that look professional, work smoothly and help businesses
+						establish a stronger online presence.</p>
+				</div>
+
+				<div class="about-section__callouts">
+					<p class="about-section__callout" data-reveal>New Company.</p>
+					<p class="about-section__callout" data-reveal><span class="gradient-text">Fresh</span> Perspective.
+					</p>
+					<p class="about-section__callout" data-reveal>Full Attention.</p>
+				</div>
+			</div>
+		</section>
+
+		<!-- Be One of Our First Projects -->
+		<section id="offer" class="section section-dark first-projects-section"
+			aria-label="Be one of our first projects">
+			<div class="container first-projects__grid">
+				<div>
+					<p class="eyebrow">A New Chapter</p>
+					<h2 class="first-projects__heading" data-reveal>Be One of Our First Projects.</h2>
+					<p class="first-projects__copy" data-reveal>Web Mastro is building its first chapter — and we're
+						looking for businesses that want a professional website without the complexity and cost of a
+						traditional agency process.</p>
+
+					<div class="offer-banner" data-reveal>
+						<span class="offer-banner__tag">
+							<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+								stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+								<path
+									d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z" />
+								<circle cx="7.5" cy="7.5" r="1.5" />
+							</svg>
+						</span>
+						<span class="offer-banner__badge">50% OFF</span>
+						<span class="offer-banner__text">on your project quote — exclusive launch offer for our very
+							first client</span>
+					</div>
+
+					<ul class="first-projects__list">
+						<li data-reveal>Direct communication</li>
+						<li data-reveal>Focused attention</li>
+						<li data-reveal>Custom design</li>
+						<li data-reveal>Structured development</li>
+						<li data-reveal>Competitive pricing</li>
+						<li data-reveal>Hassle-free process</li>
+					</ul>
+
+					<a class="btn btn--primary magnetic-wrap" href="#contact" data-magnetic data-cursor="cta">
+						Let's Build Yours
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+							stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+							<path d="M5 12h14M13 5l7 7-7 7" />
+						</svg>
+					</a>
+				</div>
+
+				<div class="first-projects__visual" id="first-projects-ribbon">
+					<img src="asserts/client.png"
+						alt="Illustration of two people exchanging a star, representing a successful client partnership"
+						width="497" height="502" loading="lazy">
+				</div>
+			</div>
+		</section>
+
+
+		<!-- Contact -->
+		<section id="contact" data-nav-section="contact" class="section contact-section" aria-label="Contact">
+			<div class="contact-section__ribbon-layer"></div>
+			<div class="container contact-section__grid">
+				<div>
+					<p class="eyebrow">Contact</p>
+					<h2 class="contact-section__heading" data-reveal>Start a Project</h2>
+					<p class="contact-section__sub" data-reveal>Have an idea, an existing website or simply a business
+						that needs to get online? Let's talk.</p>
+
+					<div class="contact-direct">
+						<a class="contact-direct__item" href="tel:+919177876802" data-magnetic>
+							<span class="contact-direct__icon">
+								<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+									stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+									<path
+										d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+								</svg>
+							</span>
+							<span class="contact-direct__text">
+								<span class="contact-direct__label">Call</span>
+								<span class="contact-direct__value">+91 91778 76802</span>
+							</span>
+						</a>
+						<a class="contact-direct__item" href="https://wa.me/919177876802" target="_blank" rel="noopener"
+							data-magnetic>
+							<span class="contact-direct__icon">
+								<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+									<path
+										d="M12 2C6.477 2 2 6.477 2 12c0 1.98.577 3.822 1.573 5.383L2 22l4.735-1.545A9.933 9.933 0 0 0 12 22c5.523 0 10-4.477 10-10S17.523 2 12 2zm0 18.2a8.17 8.17 0 0 1-4.166-1.14l-.299-.177-3.096 1.01 1.026-3.017-.194-.31A8.19 8.19 0 1 1 12 20.2z" />
+									<path
+										d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.198.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z" />
+								</svg>
+							</span>
+							<span class="contact-direct__text">
+								<span class="contact-direct__label">WhatsApp</span>
+								<span class="contact-direct__value">+91 91778 76802</span>
+							</span>
+						</a>
+						<a class="contact-direct__item" href="mailto:webmastrooffical@gmail.com" data-magnetic>
+							<span class="contact-direct__icon">
+								<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+									stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+									<rect width="20" height="16" x="2" y="4" rx="2" />
+									<path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+								</svg>
+							</span>
+							<span class="contact-direct__text">
+								<span class="contact-direct__label">Email</span>
+								<span class="contact-direct__value">webmastrooffical@gmail.com</span>
+							</span>
+						</a>
+						<a class="contact-direct__item" href="https://www.instagram.com/webmastro.in/" target="_blank"
+							rel="noopener" data-magnetic>
+							<span class="contact-direct__icon">
+								<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+									stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+									<rect width="20" height="20" x="2" y="2" rx="5" ry="5" />
+									<path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+									<line x1="17.5" y1="6.5" x2="17.5" y2="6.5" />
+								</svg>
+							</span>
+							<span class="contact-direct__text">
+								<span class="contact-direct__label">Instagram</span>
+								<span class="contact-direct__value">@webmastro.in</span>
+							</span>
+						</a>
+					</div>
+				</div>
+
+				<div>
+					<form class="contact-form" novalidate>
+						<div class="contact-form__fields">
+							<div class="contact-form__row">
+								<div class="field">
+									<label for="cf-name">Name</label>
+									<input type="text" id="cf-name" name="name" autocomplete="name" required>
+								</div>
+								<div class="field">
+									<label for="cf-company">Company <span class="optional">(optional)</span></label>
+									<input type="text" id="cf-company" name="company" autocomplete="organization">
+								</div>
+							</div>
+
+							<div class="contact-form__row">
+								<div class="field">
+									<label for="cf-email">Email</label>
+									<input type="email" id="cf-email" name="email" autocomplete="email" required>
+								</div>
+								<div class="field">
+									<label for="cf-phone">Phone <span class="optional">(optional)</span></label>
+									<input type="tel" id="cf-phone" name="phone" autocomplete="tel">
+								</div>
+							</div>
+
+							<div class="field" style="margin-bottom: var(--space-4);">
+								<label for="cf-message">Message</label>
+								<textarea id="cf-message" name="message" required></textarea>
+							</div>
+
+							<div class="contact-form__submit">
+								<button type="submit"
+									class="btn btn--primary-dark magnetic-wrap contact-form__submit-btn" data-magnetic>
+									Send Message
+								</button>
+								<span class="contact-form__status" role="status" aria-live="polite"></span>
+							</div>
+						</div>
+					</form>
+
+					<div class="contact-form__success">
+						<h3 class="contact-form__success-heading">Your vision is on its way.</h3>
+						<p class="contact-form__success-copy">Thanks for reaching out — we'll be in touch shortly to
+							discuss next steps.</p>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<footer class="site-footer">
+		<div class="site-footer__inner">
+			<div class="site-footer__bottom">
+				<p class="site-footer__copyright">© 2026 Web Mastro. All rights reserved.</p>
+				<img src="asserts/logoWithName.png" alt="Web Mastro" width="150" height="100">
+			</div>
+		</div>
+	</footer>
+
+	<!-- Vendor -->
+	<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+
+	<!-- Web Mastro modules -->
+	<script src="js/modules/coming-soon.js"></script>
+	<script src="js/modules/motion-prefs.js"></script>
+	<script src="js/modules/theme.js"></script>
+	<script src="js/modules/ribbon.js"></script>
+	<script src="js/modules/preloader.js"></script>
+	<script src="js/modules/nav.js"></script>
+	<script src="js/modules/hero.js"></script>
+	<script src="js/modules/cursor.js"></script>
+	<script src="js/modules/cursor-glow.js"></script>
+	<script src="js/modules/magnetic.js"></script>
+	<script src="js/modules/reveal.js"></script>
+	<script src="js/modules/stepper.js"></script>
+	<script src="js/modules/final-cta.js"></script>
+	<script src="js/modules/footer.js"></script>
+	<script src="js/modules/contact.js"></script>
+	<script src="js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,122 @@
+/* ==========================================================================
+   Stepper — shared connected-steps pattern (Growth journey, Process stages)
+   ========================================================================== */
+
+.stepper {
+  position: relative;
+  display: grid;
+  grid-template-columns: 32px 1fr;
+  gap: 0 var(--space-4);
+}
+
+.stepper__track {
+  position: relative;
+  width: 2px;
+  background: var(--border-light);
+  justify-self: center;
+  border-radius: var(--radius-full);
+}
+
+.section-dark .stepper__track {
+  background: var(--border-dark);
+}
+
+.stepper__track-fill {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 0%;
+  background: var(--mastro-flow);
+  border-radius: var(--radius-full);
+}
+
+.stepper__steps {
+  grid-column: 2;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-8);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.stepper__step {
+  position: relative;
+  padding-block: var(--space-1);
+}
+
+.stepper__dot {
+  position: absolute;
+  left: calc(-1 * var(--space-4) - 6px);
+  top: 6px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--off-white);
+  border: 2px solid var(--border-light);
+  transition: background var(--dur-base) var(--ease-mastro), border-color var(--dur-base) var(--ease-mastro), transform var(--dur-base) var(--ease-mastro);
+}
+
+.section-dark .stepper__dot {
+  background: var(--mastro-black);
+  border-color: var(--border-dark);
+}
+
+.stepper__step.is-active .stepper__dot {
+  background: var(--mastro-blue);
+  border-color: var(--mastro-blue);
+  transform: scale(1.15);
+}
+
+@media (max-width: 640px) {
+  .stepper {
+    grid-template-columns: 20px 1fr;
+    gap: 0 var(--space-3);
+  }
+  .stepper__dot {
+    left: calc(-1 * var(--space-3) - 6px);
+  }
+}
+
+/* Horizontal variant — desktop-only; falls back to the standard vertical
+   layout below 900px rather than cramming a timeline sideways on mobile. */
+@media (min-width: 900px) {
+  .stepper--horizontal {
+    display: block;
+  }
+
+  .stepper--horizontal .stepper__track {
+    width: 100%;
+    height: 2px;
+    margin-bottom: var(--space-6);
+  }
+
+  .stepper--horizontal .stepper__track-fill {
+    height: 100%;
+    width: 0%;
+  }
+
+  .stepper--horizontal .stepper__steps {
+    grid-column: unset;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: var(--space-4);
+  }
+
+  .stepper--horizontal .stepper__step {
+    flex: 1;
+    padding-block: 0;
+    transition: transform var(--dur-base) var(--ease-mastro);
+  }
+
+  .stepper--horizontal .stepper__step.is-active {
+    transform: scale(1.03);
+  }
+
+  .stepper--horizontal .stepper__dot {
+    position: static;
+    display: block;
+    margin-bottom: var(--space-3);
+  }
+}

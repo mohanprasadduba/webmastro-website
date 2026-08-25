@@ -1,0 +1,303 @@
+/* ==========================================================================
+   Reusable components — buttons, cursor
+   ========================================================================== */
+
+.btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-display);
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: var(--ls-normal);
+  padding: 16px 28px;
+  border-radius: var(--radius-full);
+  white-space: nowrap;
+  isolation: isolate;
+}
+
+.btn svg {
+  width: 16px;
+  height: 16px;
+  transition: transform var(--dur-fast) var(--ease-mastro);
+}
+
+.btn:hover svg,
+.btn:focus-visible svg {
+  transform: translateX(4px);
+}
+
+.btn--primary {
+  background: var(--glass-bg-bright);
+  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+  border: 1px solid var(--glass-border-bright);
+  box-shadow: var(--glass-shadow-bright);
+  color: var(--mastro-black);
+}
+
+.btn--primary::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: var(--mastro-flow);
+  opacity: 0;
+  z-index: -1;
+  transition: opacity var(--dur-base) var(--ease-mastro);
+}
+
+.btn--primary:hover,
+.btn--primary:focus-visible {
+  color: var(--white);
+}
+
+.btn--primary:hover::before,
+.btn--primary:focus-visible::before {
+  opacity: 1;
+}
+
+/* Same filled-pill treatment as .btn--primary, but for use on light-background
+   sections where a white fill would disappear into the page background. */
+.btn--primary-dark {
+  background: var(--glass-bg-on-dark-strong);
+  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+  border: 1px solid var(--glass-border-on-dark);
+  box-shadow: var(--glass-shadow-on-dark);
+  color: var(--white);
+}
+
+.btn--primary-dark::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  background: var(--mastro-flow);
+  opacity: 0;
+  z-index: -1;
+  transition: opacity var(--dur-base) var(--ease-mastro);
+}
+
+.btn--primary-dark:hover::before,
+.btn--primary-dark:focus-visible::before {
+  opacity: 1;
+}
+
+/* .btn--primary-dark was designed for CTAs on light-section backgrounds
+   (dark button, light surface). In dark theme those same sections become
+   dark too, so the button needs to flip to the bright variant instead —
+   otherwise it's a dark button on a now-dark background. */
+:root[data-theme="dark"] .btn--primary-dark {
+  background: var(--glass-bg-bright);
+  border-color: var(--glass-border-bright);
+  box-shadow: var(--glass-shadow-bright);
+  color: var(--mastro-black);
+}
+
+:root[data-theme="dark"] .btn--primary-dark:hover,
+:root[data-theme="dark"] .btn--primary-dark:focus-visible {
+  color: var(--white);
+}
+
+.btn--ghost {
+  color: var(--white);
+  border: 1px solid var(--glass-border-on-dark);
+  background: var(--glass-bg-on-dark);
+  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+  box-shadow: var(--glass-shadow-on-dark);
+  transition: border-color var(--dur-fast) var(--ease-mastro), background-color var(--dur-fast) var(--ease-mastro);
+}
+
+.btn--ghost:hover,
+.btn--ghost:focus-visible {
+  border-color: rgba(255, 255, 255, 0.4);
+  background: var(--glass-bg-on-dark-strong);
+}
+
+.btn--ghost-light {
+  color: var(--text-primary);
+  border: 1px solid var(--glass-border);
+  background: var(--glass-bg);
+  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+  box-shadow: var(--glass-shadow);
+  transition: border-color var(--dur-fast) var(--ease-mastro), background-color var(--dur-fast) var(--ease-mastro);
+}
+
+.btn--ghost-light:hover,
+.btn--ghost-light:focus-visible {
+  border-color: var(--text-muted);
+  background: var(--glass-bg-strong);
+}
+
+.magnetic-wrap {
+  display: inline-flex;
+  will-change: transform;
+}
+
+/* Promotional offer banner — used in the hero and "Be One of Our First
+   Projects" section. Both are permanently-dark contexts, so this uses the
+   constant dark/inverse token tier throughout (safe in both site themes by
+   design, same reasoning as the sections it lives in). The gradient ring is
+   a real gradient border (two background layers: an opaque navy fill
+   clipped to the padding box sits over the flow gradient clipped to the
+   border box) rather than a glow behind the pill, plus a colored icon chip
+   and gradient badge text — reads clearly as a promo, not a plain text row. */
+.offer-banner {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: 8px 22px 8px 8px;
+  margin-bottom: var(--space-5);
+  border: 2px solid transparent;
+  border-radius: var(--radius-full);
+  background-image: linear-gradient(var(--mastro-navy), var(--mastro-navy)), var(--mastro-flow);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  box-shadow: 0 10px 30px rgba(82, 36, 214, 0.35);
+}
+
+.offer-banner__tag {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--mastro-flow);
+  color: var(--white);
+}
+
+.offer-banner__tag svg {
+  width: 16px;
+  height: 16px;
+}
+
+.offer-banner__badge {
+  flex-shrink: 0;
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: var(--fs-body-lg);
+  letter-spacing: var(--ls-tight);
+  background: var(--mastro-flow);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  white-space: nowrap;
+}
+
+.offer-banner__text {
+  font-family: var(--font-body);
+  font-size: var(--fs-small);
+  font-weight: 500;
+  color: var(--text-secondary-inverse);
+  line-height: var(--lh-normal);
+  white-space: nowrap;
+  margin-bottom: 0;
+}
+
+@media (max-width: 640px) {
+  .offer-banner {
+    flex-wrap: wrap;
+    row-gap: 6px;
+    border-radius: var(--radius-lg);
+    padding: 14px 18px;
+    margin-bottom: var(--space-3);
+  }
+
+  .offer-banner__text {
+    white-space: normal;
+    flex-basis: 100%;
+  }
+}
+
+/* Custom cursor — desktop only, added by JS after feature-detecting fine pointer */
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--white);
+  mix-blend-mode: difference;
+  pointer-events: none;
+  z-index: var(--z-cursor);
+  transform: translate3d(-50%, -50%, 0);
+  will-change: transform, width, height;
+  transition: width var(--dur-fast) var(--ease-mastro),
+              height var(--dur-fast) var(--ease-mastro),
+              background-color var(--dur-fast) var(--ease-mastro);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cursor__label {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: var(--ls-wide);
+  color: var(--mastro-black);
+  opacity: 0;
+  transition: opacity var(--dur-instant) var(--ease-mastro);
+  white-space: nowrap;
+}
+
+.cursor.is-cta { width: 56px; height: 56px; }
+.cursor.is-view { width: 88px; height: 88px; }
+.cursor.is-view .cursor__label,
+.cursor.is-drag .cursor__label { opacity: 1; }
+.cursor.is-drag { width: 88px; height: 88px; }
+.cursor.is-hidden { opacity: 0; }
+
+html.has-custom-cursor,
+html.has-custom-cursor a,
+html.has-custom-cursor button {
+  cursor: none;
+}
+
+@media (hover: none), (pointer: coarse) {
+  .cursor { display: none !important; }
+  html.has-custom-cursor,
+  html.has-custom-cursor a,
+  html.has-custom-cursor button {
+    cursor: auto;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cursor { display: none !important; }
+}
+
+/* Ambient cursor trail — one canvas, fixed to the viewport, shared across
+   every page/section. A continuously-emitted particle trail in the brand's
+   own flow-gradient colors (read from tokens at init). Particles are painted
+   with plain alpha (no mix-blend-mode) so the true brand color stays visible
+   against both light- and dark-theme backgrounds. Canvas-drawn rather than
+   DOM nodes so a full trail is one clear + N arc fills per frame. Desktop
+   only, added by JS after feature-detecting fine pointer. */
+.cursor-glow {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: var(--z-glow);
+  opacity: 0;
+  transition: opacity 0.4s var(--ease-mastro);
+}
+
+.cursor-glow.is-active {
+  opacity: 1;
+}
+
+@media (hover: none), (pointer: coarse) {
+  .cursor-glow { display: none !important; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .cursor-glow { display: none !important; }
+}

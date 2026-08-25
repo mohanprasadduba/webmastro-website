@@ -1,0 +1,188 @@
+/* ==========================================================================
+   Selected Work
+   ========================================================================== */
+
+.portfolio-section {
+  background: var(--white);
+}
+
+.portfolio-section__heading {
+  font-size: var(--fs-h2);
+  max-width: 16ch;
+  margin-block: var(--space-2) var(--space-2);
+  transition: opacity var(--dur-slow) var(--ease-mastro), transform var(--dur-slow) var(--ease-mastro);
+}
+
+.portfolio-section__sub {
+  font-family: var(--font-body);
+  font-size: var(--fs-body-lg);
+  color: var(--text-secondary);
+  max-width: 56ch;
+  margin-bottom: var(--space-10);
+}
+
+.portfolio-list {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(64px, 9vw, 120px);
+}
+
+.portfolio-item {
+  display: grid;
+  grid-template-columns: minmax(0, 0.85fr) minmax(0, 1.15fr);
+  gap: var(--space-6);
+  align-items: center;
+}
+
+.portfolio-item:nth-child(even) {
+  direction: rtl;
+}
+
+.portfolio-item:nth-child(even) > * {
+  direction: ltr;
+}
+
+.portfolio-item__index {
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: clamp(15px, 1.4vw, 17px);
+  color: var(--text-muted);
+  margin-bottom: var(--space-2);
+}
+
+.portfolio-item__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-family: var(--font-display);
+  font-size: var(--fs-micro);
+  font-weight: 600;
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  color: var(--mastro-blue-text);
+  background: rgba(10, 130, 243, 0.08);
+  border-radius: var(--radius-full);
+  padding: 5px 12px;
+  margin-bottom: var(--space-3);
+}
+
+.portfolio-item__name {
+  font-size: clamp(28px, 3.6vw, 44px);
+  margin-bottom: var(--space-2);
+}
+
+.portfolio-item__meta {
+  font-family: var(--font-body);
+  font-size: var(--fs-small);
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: var(--ls-wide);
+  margin-bottom: var(--space-3);
+}
+
+.portfolio-item__desc {
+  font-family: var(--font-body);
+  font-size: var(--fs-body-lg);
+  color: var(--text-secondary);
+  line-height: var(--lh-relaxed);
+  max-width: 44ch;
+  margin-bottom: var(--space-3);
+}
+
+.portfolio-item__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.portfolio-item__tags span {
+  font-family: var(--font-body);
+  font-size: var(--fs-small);
+  color: var(--text-secondary);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-full);
+  padding: 5px 12px;
+}
+
+.portfolio-item__view {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-family: var(--font-display);
+  font-size: var(--fs-small);
+  font-weight: 600;
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  color: var(--text-primary);
+  margin-top: var(--space-3);
+}
+
+.portfolio-item__view svg {
+  width: 14px;
+  height: 14px;
+  transition: transform var(--dur-fast) var(--ease-mastro);
+}
+
+.portfolio-item__view:hover svg,
+.portfolio-item__view:focus-visible svg {
+  transform: translateX(4px);
+}
+
+.portfolio-item__visual {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--off-white);
+  border: 1px solid var(--border-light);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: border-color var(--dur-fast) var(--ease-mastro);
+}
+
+.portfolio-item__visual:hover,
+.portfolio-item__visual:focus-visible {
+  border-color: var(--text-muted);
+}
+
+.portfolio-item__visual:hover .portfolio-item__visual-ribbon,
+.portfolio-item__visual:focus-visible .portfolio-item__visual-ribbon {
+  transform: scale(1.04);
+}
+
+.portfolio-item__visual-pattern {
+  position: absolute;
+  inset: 0;
+  opacity: 0.5;
+  background-image:
+    linear-gradient(var(--border-light) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border-light) 1px, transparent 1px);
+  background-size: 32px 32px;
+}
+
+.portfolio-item__visual-ribbon {
+  position: relative;
+  width: 60%;
+  will-change: transform;
+}
+
+.portfolio-item__visual-label {
+  position: absolute;
+  bottom: var(--space-3);
+  left: var(--space-3);
+  font-family: var(--font-display);
+  font-size: var(--fs-micro);
+  font-weight: 600;
+  letter-spacing: var(--ls-wider);
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+@media (max-width: 900px) {
+  .portfolio-item,
+  .portfolio-item:nth-child(even) {
+    grid-template-columns: 1fr;
+    direction: ltr;
+  }
+}

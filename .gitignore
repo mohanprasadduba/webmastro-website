@@ -1,0 +1,27 @@
+# OS junk
+.DS_Store
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+# Editor/IDE
+.vscode/
+.idea/
+*.swp
+
+# Claude Code — personal, per-machine settings (not shared)
+.claude/settings.local.json
+
+# Build-tool metadata bundled with vendored sample templates
+prepros.config
+prepros-*.config
+
+# Node (not currently used, but standard to exclude if ever added)
+node_modules/
+
+# Environment variables
+.env
+.env.local
+
+# Logs
+*.log

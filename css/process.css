@@ -1,0 +1,346 @@
+/* ==========================================================================
+   Journey components — shared by "From Design to Digital Impact" (dark,
+   .process-step, rides the horizontal .stepper--horizontal layout) and
+   "The Simple Web Mastro Process" (a static illustrated SVG flow diagram,
+   see .process-flow below).
+   ========================================================================== */
+
+.impact-journey-section,
+.simple-process-section {
+  position: relative;
+  overflow: hidden;
+  padding-bottom: clamp(80px, 10vw, 160px);
+}
+
+.impact-journey-section::before,
+.simple-process-section::before {
+  content: '';
+  position: absolute;
+  inset: -10%;
+  filter: blur(70px);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.impact-journey-section::before {
+  background:
+    radial-gradient(circle at 80% 20%, rgba(177, 27, 171, 0.22), transparent 42%),
+    radial-gradient(circle at 15% 75%, rgba(10, 130, 243, 0.18), transparent 42%);
+}
+
+.simple-process-section::before {
+  background:
+    radial-gradient(circle at 15% 20%, rgba(128, 190, 16, 0.20), transparent 42%),
+    radial-gradient(circle at 85% 80%, rgba(10, 130, 243, 0.20), transparent 42%);
+}
+
+.impact-journey-section .container,
+.simple-process-section .container {
+  position: relative;
+  z-index: 1;
+}
+
+.impact-journey-section__heading,
+.simple-process-section__heading {
+  font-size: var(--fs-h2);
+  max-width: 18ch;
+  margin-block: var(--space-2) var(--space-2);
+  transition: opacity var(--dur-slow) var(--ease-mastro), transform var(--dur-slow) var(--ease-mastro);
+}
+
+.impact-journey-section__heading {
+  color: var(--white);
+}
+
+.impact-journey-section__sub,
+.simple-process-section__sub {
+  font-family: var(--font-body);
+  font-size: var(--fs-body-lg);
+  line-height: var(--lh-relaxed);
+  max-width: 60ch;
+  margin-bottom: var(--space-8);
+}
+
+.impact-journey-section__sub {
+  color: var(--text-secondary-inverse);
+}
+
+.simple-process-section__sub {
+  color: var(--text-secondary);
+}
+
+.impact-journey-section .stepper,
+.simple-process-section .stepper {
+  max-width: none;
+}
+
+/* Dark step (Design to Digital Impact) — a bordered card per step, cycling
+   through the brand's six flow-gradient colors, with a dashed outer outline,
+   a top connector node (reusing .stepper__dot, which stepper.js already
+   drives via scroll progress) and a chevron connector between cards. */
+.impact-journey-section .stepper__step:nth-child(1) { --step-accent: var(--mastro-blue); }
+.impact-journey-section .stepper__step:nth-child(2) { --step-accent: var(--mastro-purple); }
+.impact-journey-section .stepper__step:nth-child(3) { --step-accent: var(--mastro-magenta); }
+.impact-journey-section .stepper__step:nth-child(4) { --step-accent: var(--mastro-pink); }
+.impact-journey-section .stepper__step:nth-child(5) { --step-accent: var(--mastro-orange); }
+.impact-journey-section .stepper__step:nth-child(6) { --step-accent: var(--mastro-green); }
+
+/* The dashed outline visually extends past the card itself, contained
+   within padding on .stepper__step instead of actually overflowing its box
+   — so .stepper__steps never needs overflow: auto/scroll and can never pick
+   up a stray scrollbar. */
+.impact-journey-section .stepper__step {
+  min-width: 0;
+  padding: 16px 16px 14px;
+}
+
+.process-step {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+  gap: var(--space-2);
+  padding: var(--space-6) var(--space-3) var(--space-4);
+  border-radius: var(--radius-lg);
+  background: var(--glass-bg-on-dark);
+  backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+  -webkit-backdrop-filter: blur(var(--glass-blur)) saturate(var(--glass-saturate));
+  border: 3px solid var(--step-accent, var(--mastro-blue));
+  box-shadow: var(--glass-shadow-on-dark);
+  transition: transform var(--dur-base) var(--ease-mastro), box-shadow var(--dur-base) var(--ease-mastro);
+}
+
+/* Outer dashed outline, offset from the card's own solid border but still
+   within .stepper__step's own padding box (see above). */
+.process-step::before {
+  content: '';
+  position: absolute;
+  inset: -10px;
+  border: 2px dashed var(--step-accent, var(--mastro-blue));
+  border-radius: calc(var(--radius-lg) + 10px);
+  opacity: 0.35;
+  pointer-events: none;
+}
+
+@media (hover: hover) {
+  .process-step:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
+  }
+}
+
+.process-step__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: var(--glass-bg-on-dark-strong);
+  border: 1.5px solid var(--step-accent, var(--mastro-blue));
+  color: var(--step-accent, var(--mastro-blue));
+}
+
+.process-step__icon svg {
+  width: 22px;
+  height: 22px;
+}
+
+.process-step__title {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: clamp(17px, 1.6vw, 20px);
+  color: var(--white);
+}
+
+.process-step__desc {
+  font-family: var(--font-body);
+  font-size: var(--fs-small);
+  color: var(--text-secondary-inverse);
+  line-height: var(--lh-relaxed);
+}
+
+.process-step__num {
+  margin-top: auto;
+  padding-top: var(--space-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  border-radius: 50%;
+  border: 2px solid var(--step-accent, var(--mastro-blue));
+  color: var(--step-accent, var(--mastro-blue));
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: var(--fs-small);
+}
+
+/* .stepper__dot stays in the DOM (stepper.js still needs to find it and
+   toggle .is-active, which also drives the card's own scale-up emphasis
+   below) but the connector node itself is no longer shown. */
+.impact-journey-section .stepper--horizontal .stepper__dot,
+.impact-journey-section .stepper__dot {
+  display: none;
+}
+
+/* Chevron connector between cards. Each range declares its own `content` —
+   deliberately not a single shared unconditional rule. */
+
+/* Horizontal desktop, pointing right — the grid is a fixed 3 columns (see
+   below), so wrapping is deterministic: every 3rd card ends a row and gets
+   no arrow (it would point at nothing / the wrong neighbor below it). */
+@media (min-width: 900px) {
+  .impact-journey-section .stepper__step:not(:nth-child(3n)):not(:last-child)::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: calc(-1 * var(--space-4) / 2 - 5px);
+    width: 10px;
+    height: 10px;
+    border-top: 2px solid var(--text-muted-inverse);
+    border-right: 2px solid var(--text-muted-inverse);
+    transform: translateY(-50%) rotate(45deg);
+    z-index: 1;
+  }
+}
+
+/* The progress-line rail this shares with .stepper's other (currently
+   unused) consumers has no place in the card layout — hidden at every
+   breakpoint, not just mobile. */
+.impact-journey-section .stepper__track {
+  display: none;
+}
+
+@media (max-width: 899px) {
+  .impact-journey-section .stepper {
+    grid-template-columns: 1fr;
+  }
+
+  /* With the track hidden, pull the steps list out of the grid-column: 2
+     slot it left behind. */
+  .impact-journey-section .stepper__steps {
+    grid-column: 1;
+  }
+
+  .impact-journey-section .stepper__step:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-top: 2px solid var(--text-muted-inverse);
+    border-right: 2px solid var(--text-muted-inverse);
+    z-index: 1;
+    left: 50%;
+    bottom: calc(-1 * var(--space-8) / 2 - 5px);
+    transform: translateX(-50%) rotate(135deg);
+  }
+}
+
+/* The Simple Web Mastro Process — static illustrated flow diagram (see
+   asserts/process_flow.svg), inlined directly so it shares the page's
+   already-loaded Inter font instead of depending on the SVG's own @import. */
+.process-flow {
+  width: 100%;
+  max-width: 1400px;
+  margin-inline: auto;
+}
+
+.process-flow-svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1600 / 420;
+}
+
+/* Screen-reader-only twin of the illustrated SVG by default (desktop shows
+   the wide graphic; this list carries the same content as real text for
+   assistive tech). Below 900px the graphic's hand-set text stops being
+   legible if it just keeps shrinking with the viewport (SVG text scales
+   with the whole graphic, it doesn't reflow) — so instead of a horizontally
+   scrolling image, this same list becomes the visible mobile layout: a
+   plain vertical stack, one step per row, with a small icon and real,
+   normally-sized text. */
+.pf-steps {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (max-width: 899px) {
+  .process-flow-svg {
+    display: none;
+  }
+
+  .pf-steps {
+    position: static;
+    width: auto;
+    height: auto;
+    padding: 0;
+    margin: 0;
+    overflow: visible;
+    clip: auto;
+    white-space: normal;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+  }
+
+  .pf-step {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-4);
+  }
+
+  .pf-step-icon {
+    width: clamp(64px, 18vw, 88px);
+    height: clamp(64px, 18vw, 88px);
+    flex-shrink: 0;
+  }
+
+  .pf-step-text h3 {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: var(--fs-body-lg);
+    color: var(--text-primary);
+    margin-bottom: 6px;
+  }
+
+  .pf-step-text p {
+    font-family: var(--font-body);
+    font-size: var(--fs-small);
+    color: var(--text-secondary);
+    line-height: var(--lh-relaxed);
+  }
+
+  .pf-step-tagline {
+    display: inline-block;
+    margin-top: 6px;
+    font-family: var(--font-display);
+    font-size: var(--fs-small);
+    font-weight: 600;
+    font-style: italic;
+    color: var(--pf);
+  }
+}
+
+/* Fixed 3-up grid — 6 steps become two rows of three, never a scroll. Grid
+   rows stretch their items to equal height by default, which is what lets
+   .process-step__num sit flush at the bottom via margin-top: auto. */
+@media (min-width: 900px) {
+  .impact-journey-section .stepper--horizontal .stepper__steps {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-6) var(--space-4);
+  }
+}
