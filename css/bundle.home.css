@@ -1099,13 +1099,46 @@ body.no-scroll { overflow: hidden; }
   border-radius: inherit;
   box-shadow: inset 0 1px 0 var(--glass-highlight-on-dark);
   pointer-events: none;
+  z-index: 2;
 }
 
-.hero__visual-box img {
+.hero__visual-flip {
+  position: relative;
+  width: 100%;
+  height: 100%;
+}
+
+.hero__visual-flip img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
   display: block;
+  opacity: 0;
+}
+
+.hero__visual-flip img.is-active {
+  opacity: 1;
+}
+
+/* Populated with .hero__shatter-tile divs by hero.js only for the
+   duration of each transition, then emptied — a grid of small
+   background-image slices (CSS sprite technique, no extra image files)
+   that fly apart and reassemble into the next image. */
+.hero__visual-shatter {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.hero__shatter-tile {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-repeat: no-repeat;
+  will-change: transform, opacity;
 }
 
 .hero__headline {
@@ -1145,9 +1178,20 @@ body.no-scroll { overflow: hidden; }
 .hero__actions {
   display: flex;
   align-items: center;
-  gap: var(--space-4);
+  gap: var(--space-3);
   flex-wrap: wrap;
   margin-bottom: var(--space-6);
+}
+
+.hero__actions .btn {
+  padding: 12px 20px;
+  font-size: 14px;
+  gap: 8px;
+}
+
+.hero__actions .btn svg {
+  width: 14px;
+  height: 14px;
 }
 
 .hero__benefits {
@@ -1227,6 +1271,21 @@ body.no-scroll { overflow: hidden; }
     margin-inline: auto;
     transform: none;
   }
+
+  /* display:contents unwraps .hero__text so its own children become direct
+     grid items of .hero__content alongside .hero__visual — that's what
+     lets the image slot in between the sub-copy and the action buttons via
+     order, without restructuring the HTML or touching the desktop 2-column
+     grid (which needs .hero__text to stay a real box). */
+  .hero__text {
+    display: contents;
+  }
+  .hero__headline { order: 1; }
+  .hero__sub { order: 2; }
+  .hero__visual { order: 3; }
+  .hero__actions { order: 4; }
+  .hero__benefits { order: 5; }
+  .offer-banner { order: 6; }
 }
 
 @media (max-width: 720px) {
@@ -1234,15 +1293,42 @@ body.no-scroll { overflow: hidden; }
   .hero__ribbon-layer .ribbon-svg { width: 160vw; }
 
   .hero__headline { margin-bottom: var(--space-3); }
-  .hero__sub { margin-bottom: var(--space-4); }
-  .hero__actions { gap: var(--space-2); margin-bottom: var(--space-4); }
-  .hero__actions .btn--ghost { display: none; }
+  .hero__sub {
+    margin-top: calc(var(--space-2) - 2 * var(--space-3));
+    margin-bottom: calc(var(--space-2) - var(--space-3));
+  }
+
+  .hero__actions {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-2);
+    margin-bottom: var(--space-2);
+  }
+  .hero__actions .btn--primary {
+    grid-column: 1 / -1;
+    justify-content: center;
+  }
+  .hero__actions .btn--ghost {
+    justify-content: center;
+    padding-inline: 12px;
+    font-size: 13px;
+    white-space: normal;
+    text-align: center;
+  }
+
   .hero__benefits {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    margin-bottom: var(--space-3);
+    gap: var(--space-2);
+    margin-top: calc(-1 * var(--space-3));
+    margin-bottom: calc(var(--space-2) - var(--space-3));
   }
-  .hero__benefits span { justify-content: center; }
+  .hero__benefits span {
+    justify-content: center;
+    padding: 12px;
+    font-size: 13px;
+    box-shadow: var(--glass-shadow-on-dark);
+  }
   .hero__scroll { padding-top: var(--space-1); }
 }
 
@@ -2818,7 +2904,19 @@ body.no-scroll { overflow: hidden; }
   padding-top: 0;
 }
 
+.site-footer__bottom-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
 .site-footer__copyright {
+  font-family: var(--font-body);
+  font-size: var(--fs-small);
+  color: var(--text-muted-inverse);
+}
+
+.site-footer__location {
   font-family: var(--font-body);
   font-size: var(--fs-small);
   color: var(--text-muted-inverse);

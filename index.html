@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="no-js">
+<html lang="en-IN" class="no-js">
 
 <head>
 	<meta charset="utf-8">
@@ -20,13 +20,14 @@
 		})();
 	</script>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="strict-origin-when-cross-origin">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<title>Web Mastro — Web Design &amp; Development Agency</title>
+	<title>Web Mastro — Website Design &amp; Development Agency in Hyderabad</title>
 	<meta name="description"
-		content="Web Mastro builds high-performance websites that look exceptional, launch fast, cost less and make growing your business easier. Best designs. Fast delivery. Less cost. Hassle-free process.">
+		content="Web Mastro is a website design and web development agency in Hyderabad, India, building high-performance websites that look exceptional, launch fast and help businesses grow. Best designs. Fast delivery. Less cost. Hassle-free process.">
 	<meta name="keywords"
-		content="web development agency, website design, custom website development, business website, landing page design, e-commerce website">
+		content="web development agency Hyderabad, website design company Hyderabad, web design agency India, custom website development, business website design">
 	<meta name="author" content="Web Mastro">
 	<link rel="canonical" href="https://webmastro.in/">
 
@@ -34,23 +35,26 @@
 	<meta property="og:type" content="website">
 	<meta property="og:site_name" content="Web Mastro">
 	<meta property="og:url" content="https://webmastro.in/">
-	<meta property="og:title" content="Web Mastro — Web Design &amp; Development Agency">
+	<meta property="og:title" content="Web Mastro — Website Design &amp; Development Agency in Hyderabad">
 	<meta property="og:description"
-		content="Best designs. Fast delivery. Less cost. Hassle-free process. We build high-performance websites that help businesses grow.">
+		content="Website design and web development agency in Hyderabad, India. Best designs. Fast delivery. Less cost. Hassle-free process.">
 	<meta property="og:image" content="https://webmastro.in/assets/og/og-image.png">
 	<meta property="og:image:width" content="1200">
 	<meta property="og:image:height" content="630">
+	<meta property="og:locale" content="en_IN">
 
 	<!-- Twitter -->
 	<meta name="twitter:card" content="summary_large_image">
 	<meta name="twitter:title" content="Web Mastro — Your Vision, Our Craft">
-	<meta name="twitter:description" content="Best designs. Fast delivery. Less cost. Hassle-free process.">
+	<meta name="twitter:description" content="Website design and web development agency in Hyderabad, India.">
 	<meta name="twitter:image" content="https://webmastro.in/assets/og/og-image.png">
 
 	<!-- Favicon -->
 	<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32.png">
 	<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16.png">
 	<link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+	<link rel="manifest" href="manifest.webmanifest">
+	<meta name="theme-color" content="#050B17">
 
 	<!-- Fonts -->
 	<link rel="preconnect" href="https://fonts.googleapis.com">
@@ -67,22 +71,52 @@
 	<!-- Design system (bundled — see css/bundle.home.css header) -->
 	<link rel="stylesheet" href="css/bundle.home.css">
 
-	<!-- Organization schema -->
+	<!-- Organization / LocalBusiness schema -->
 	<script type="application/ld+json">
 	{
 		"@context": "https://schema.org",
-		"@type": "Organization",
+		"@type": ["Organization", "LocalBusiness"],
 		"name": "Web Mastro",
 		"slogan": "Your Vision, Our Craft",
 		"url": "https://webmastro.in/",
 		"logo": "https://webmastro.in/asserts/logo-transparent.png",
-		"description": "Web Mastro is a web design and development agency building high-performance websites — best designs, fast delivery, less cost, hassle-free process.",
-		"telephone": "+91-91778-76802",
+		"image": "https://webmastro.in/assets/og/og-image.png",
+		"description": "Web Mastro is a website design and web development agency based in Hyderabad, Telangana, India, serving clients across India — best designs, fast delivery, less cost, hassle-free process.",
 		"email": "webmastrooffical@gmail.com",
+		"address": {
+			"@type": "PostalAddress",
+			"addressLocality": "Hyderabad",
+			"addressRegion": "Telangana",
+			"addressCountry": "IN"
+		},
+		"areaServed": [
+			{ "@type": "City", "name": "Hyderabad" },
+			{ "@type": "Country", "name": "India" }
+		],
+		"contactPoint": {
+			"@type": "ContactPoint",
+			"telephone": "+91-78160-81104",
+			"contactType": "customer service",
+			"email": "webmastrooffical@gmail.com",
+			"areaServed": "IN"
+		},
+		"makesOffer": [
+			{ "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Website Design", "areaServed": "IN" } },
+			{ "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Web Development", "areaServed": "IN" } }
+		],
 		"sameAs": [
-			"https://www.instagram.com/webmastro.in/",
-			"https://wa.me/917816081104"
+			"https://www.instagram.com/webmastro.in/"
 		]
+	}
+	</script>
+
+	<!-- WebSite schema -->
+	<script type="application/ld+json">
+	{
+		"@context": "https://schema.org",
+		"@type": "WebSite",
+		"name": "Web Mastro",
+		"url": "https://webmastro.in/"
 	}
 	</script>
 </head>
@@ -195,9 +229,12 @@
 						<a class="btn btn--ghost magnetic-wrap" href="#work" data-magnetic>
 							How We Make It Work
 						</a>
+						<a class="btn btn--ghost magnetic-wrap" href="#contact" data-magnetic>
+							Contact Us
+						</a>
 					</div>
 
-					<div class="hero__benefits" aria-label="Why Web Mastro" href="#advantages">
+					<div class="hero__benefits" aria-label="Why Web Mastro">
 						<span>Best Designs</span>
 						<span>Fast Delivery</span>
 						<span>Less Cost</span>
@@ -223,16 +260,21 @@
 
 				<div class="hero__visual">
 					<div class="hero__visual-box">
-						<img src="asserts/heroImage.jpg"
-							alt="Illustration of two people exchanging a star, representing a successful client partnership"
-							width="597" height="402" loading="lazy">
+						<div class="hero__visual-flip">
+							<img src="asserts/heroImage.png"
+								alt="Illustration of two people exchanging a star, representing a successful client partnership"
+								width="597" height="402" fetchpriority="high" decoding="async" class="is-active">
+							<img src="asserts/heroImage1.png" alt="" aria-hidden="true" width="597" height="402" loading="lazy">
+							<img src="asserts/heroImage2.png" alt="" aria-hidden="true" width="597" height="402" loading="lazy">
+						</div>
+						<div class="hero__visual-shatter" aria-hidden="true"></div>
 					</div>
 				</div>
 			</div>
 			<div class="hero__scroll">
-						<span>Scroll</span>
-						<span class="hero__scroll-line"></span>
-					</div>
+				<span>Scroll</span>
+				<span class="hero__scroll-line"></span>
+			</div>
 		</section>
 
 		<!-- Why Does Your Business Need a Real Website? -->
@@ -929,7 +971,7 @@
 						complexity.</p>
 					<p class="about-section__copy" data-reveal>Web Mastro combines design, development and practical
 						digital thinking to create websites that look professional, work smoothly and help businesses
-						establish a stronger online presence.</p>
+						establish a stronger online presence. Based in Hyderabad, we work with businesses across India.</p>
 				</div>
 
 				<div class="about-section__callouts">
@@ -986,7 +1028,7 @@
 
 				<div class="first-projects__visual" id="first-projects-ribbon">
 					<img src="asserts/client.png"
-						alt="Illustration of two people exchanging a star, representing a successful client partnership"
+						alt="Illustration representing a new client partnership with Web Mastro"
 						width="497" height="502" loading="lazy">
 				</div>
 			</div>
@@ -1116,7 +1158,10 @@
 	<footer class="site-footer">
 		<div class="site-footer__inner">
 			<div class="site-footer__bottom">
-				<p class="site-footer__copyright">© 2026 Web Mastro. All rights reserved.</p>
+				<div class="site-footer__bottom-text">
+					<p class="site-footer__copyright">© 2026 Web Mastro. All rights reserved.</p>
+					<p class="site-footer__location">Website Design &amp; Development Agency in Hyderabad, India</p>
+				</div>
 				<img src="asserts/logoWithName.png" alt="Web Mastro" width="150" height="100">
 			</div>
 		</div>

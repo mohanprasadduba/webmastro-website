@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en-IN" class="no-js">
+<head>
+	<meta charset="utf-8">
+	<!-- Sets the theme before first paint to avoid a flash of the wrong
+	     theme. Always time-of-day based (light 06:00–18:00, dark otherwise)
+	     — resets on every load/refresh, a manual toggle only affects the
+	     current view. Keep in sync with theme.js. -->
+	<script>
+	(function () {
+		try {
+			var h = new Date().getHours();
+			var theme = (h >= 6 && h < 18) ? 'light' : 'dark';
+			document.documentElement.setAttribute('data-theme', theme);
+		} catch (e) {
+			document.documentElement.setAttribute('data-theme', 'light');
+		}
+	})();
+	</script>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="referrer" content="strict-origin-when-cross-origin">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>Page Not Found — Web Mastro</title>
+	<meta name="description" content="The page you're looking for doesn't exist. Head back to the Web Mastro homepage.">
+	<meta name="robots" content="noindex">
+	<link rel="canonical" href="https://webmastro.in/">
+
+	<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16.png">
+	<link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-touch-icon.png">
+
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+	<noscript><link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"></noscript>
+
+	<link rel="stylesheet" href="css/tokens.css">
+	<link rel="stylesheet" href="css/base.css">
+	<link rel="stylesheet" href="css/components.css">
+	<link rel="stylesheet" href="css/nav.css">
+	<link rel="stylesheet" href="css/footer.css">
+	<link rel="stylesheet" href="css/404.css">
+</head>
+<body>
+	<a class="skip-link" href="#main">Skip to content</a>
+
+	<header class="nav is-scrolled">
+		<a class="nav__logo" href="index.html" aria-label="Web Mastro — home">
+			<img src="asserts/logo-web.png" alt="Web Mastro" width="120" height="39">
+		</a>
+		<nav class="nav__links" aria-label="Primary">
+			<a class="nav__link" href="index.html#top">Home</a>
+			<a class="nav__link" href="index.html#advantages">Why Web Mastro</a>
+			<a class="nav__link" href="index.html#process">Process</a>
+			<a class="nav__link" href="work-samples.html">Work Samples</a>
+			<a class="nav__link" href="index.html#about">About</a>
+			<a class="nav__link" href="index.html#contact">Contact</a>
+		</nav>
+		<div class="nav__right">
+			<a class="nav__cta" href="index.html#contact">
+				Start a Project
+				<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+			</a>
+			<button class="theme-toggle" id="theme-toggle" type="button">
+				<svg class="theme-toggle__icon theme-toggle__icon--sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+				<svg class="theme-toggle__icon theme-toggle__icon--moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9Z"/></svg>
+			</button>
+			<button class="nav__toggle" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+				<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+			</button>
+		</div>
+	</header>
+
+	<div class="nav__mobile" id="mobile-menu">
+		<div class="nav__mobile-links">
+			<a class="nav__mobile-link" href="index.html#top">Home</a>
+			<a class="nav__mobile-link" href="index.html#advantages">Why Web Mastro</a>
+			<a class="nav__mobile-link" href="index.html#process">Process</a>
+			<a class="nav__mobile-link" href="work-samples.html">Work Samples</a>
+			<a class="nav__mobile-link" href="index.html#about">About</a>
+			<a class="nav__mobile-link" href="index.html#contact">Contact</a>
+		</div>
+		<a class="btn btn--primary nav__mobile-cta" href="index.html#contact">
+			Start a Project
+			<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+		</a>
+	</div>
+
+	<main id="main">
+		<section class="not-found" aria-label="Page not found">
+			<div class="container not-found__inner">
+				<p class="not-found__code gradient-text">404</p>
+				<h1 class="not-found__title">Page Not Found</h1>
+				<p class="not-found__copy">The page you're looking for doesn't exist or may have moved. Let's get you back on track.</p>
+				<div class="not-found__actions">
+					<a class="btn btn--primary magnetic-wrap" href="index.html" data-magnetic>
+						Back to Home
+						<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+					</a>
+					<a class="btn btn--ghost magnetic-wrap" href="work-samples.html" data-magnetic>
+						View Our Work
+					</a>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<footer class="site-footer">
+		<div class="site-footer__inner">
+			<div class="site-footer__bottom">
+				<div class="site-footer__bottom-text">
+					<p class="site-footer__copyright">© 2026 Web Mastro. All rights reserved.</p>
+					<p class="site-footer__location">Website Design &amp; Development Agency in Hyderabad, India</p>
+				</div>
+				<img src="asserts/logoWithName.png" alt="Web Mastro" width="150" height="100">
+			</div>
+		</div>
+	</footer>
+
+	<script src="js/modules/motion-prefs.js"></script>
+	<script src="js/modules/theme.js"></script>
+	<script src="js/modules/nav.js"></script>
+	<script src="js/modules/cursor.js"></script>
+	<script src="js/modules/cursor-glow.js"></script>
+	<script src="js/modules/magnetic.js"></script>
+	<script src="js/modules/footer.js"></script>
+	<script>
+		document.documentElement.classList.remove('no-js');
+		document.documentElement.classList.add('js');
+
+		document.addEventListener('DOMContentLoaded', function () {
+			window.MastroTheme && window.MastroTheme.init();
+			window.MastroNav && window.MastroNav.init();
+			window.MastroCursor && window.MastroCursor.init();
+			window.MastroCursorGlow && window.MastroCursorGlow.init();
+			window.MastroMagnetic && window.MastroMagnetic.init();
+			window.MastroFooter && window.MastroFooter.init();
+		});
+	</script>
+</body>
+</html>

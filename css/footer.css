@@ -143,7 +143,19 @@
   padding-top: 0;
 }
 
+.site-footer__bottom-text {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
 .site-footer__copyright {
+  font-family: var(--font-body);
+  font-size: var(--fs-small);
+  color: var(--text-muted-inverse);
+}
+
+.site-footer__location {
   font-family: var(--font-body);
   font-size: var(--fs-small);
   color: var(--text-muted-inverse);

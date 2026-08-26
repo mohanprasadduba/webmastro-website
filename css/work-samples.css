@@ -157,6 +157,12 @@
   }
 }
 
+.ws-list__heading {
+  font-size: var(--fs-h2);
+  max-width: 20ch;
+  margin-block: var(--space-2) var(--space-6);
+}
+
 .ws-list {
   display: flex;
   flex-direction: column;

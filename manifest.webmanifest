@@ -1,0 +1,23 @@
+{
+  "name": "Web Mastro — Website Design & Development Agency",
+  "short_name": "Web Mastro",
+  "description": "Website design and web development agency in Hyderabad, India.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#050B17",
+  "theme_color": "#050B17",
+  "lang": "en-IN",
+  "icons": [
+    {
+      "src": "assets/favicon/favicon-32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "assets/favicon/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
