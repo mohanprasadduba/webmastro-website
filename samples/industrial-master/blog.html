@@ -1,214 +1,110 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Industrial &mdash; Website Template by Colorlin</title>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Articles — Forgeworks</title>
+	<meta name="description" content="Notes on fabrication, welding, and shop process from Forgeworks.">
 
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Oxygen:400,700" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/animate.css">
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <link rel="stylesheet" href="css/jquery.fancybox.min.css">
+	<link rel="stylesheet" href="css/forgeworks.css">
+</head>
+<body>
+	<a class="skip-link" href="#main">Skip to content</a>
 
-    <link rel="stylesheet" href="fonts/ionicons/css/ionicons.min.css">
-    <link rel="stylesheet" href="fonts/fontawesome/css/font-awesome.min.css">
+	<header class="nav">
+		<div class="container nav__inner">
+			<a class="nav__logo" href="index.html">FORGE<span>WORKS</span></a>
+			<nav class="nav__menu" aria-label="Primary">
+				<a href="index.html">Home</a>
+				<a href="about.html">About</a>
+				<a href="projects.html">Projects</a>
+				<a href="services.html">Services</a>
+				<a href="blog.html" class="is-active">Articles</a>
+				<a href="contact.html">Contact</a>
+			</nav>
+			<button class="nav__toggle" aria-label="Open menu" aria-expanded="false">
+				<span></span><span></span><span></span>
+			</button>
+		</div>
+	</header>
 
-    <!-- Theme Style -->
-    <link rel="stylesheet" href="css/style.css">
+	<main id="main">
+		<header class="page-hero container" data-reveal>
+			<p class="page-hero__num">// Articles</p>
+			<h1>From the shop floor</h1>
+		</header>
 
-  </head>
-  <body>
-    
-    <header role="banner">
-      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <div class="container-fluid">
-          <a class="navbar-brand " href="index.html">Industrial</a>
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample05" aria-controls="navbarsExample05" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
+		<section class="container" style="padding-block: clamp(48px, 8vw, 88px);">
+			<div class="post-grid" data-reveal>
+				<article class="post-card">
+					<div class="post-card__media"><img src="images/industrial_blog_1.jpg" alt="Steel fabrication in progress"></div>
+					<div class="post-card__body">
+						<p class="post-card__meta">Process</p>
+						<h3>Choosing the right ducting layout the first time</h3>
+						<p>Airflow and access decisions made on paper are far cheaper to fix than the ones made on site. A look at the questions worth asking before steel gets cut.</p>
+					</div>
+				</article>
+				<article class="post-card">
+					<div class="post-card__media"><img src="images/industrial_blog_2.jpg" alt="Welding sparks in an industrial workshop"></div>
+					<div class="post-card__body">
+						<p class="post-card__meta">Quality</p>
+						<h3>What we actually check before a weld ships</h3>
+						<p>A walk through the inspection steps between "welded" and "certified" — and why we don't skip them under deadline pressure.</p>
+					</div>
+				</article>
+				<article class="post-card">
+					<div class="post-card__media"><img src="images/industrial_blog_3.jpg" alt="Industrial fabrication equipment"></div>
+					<div class="post-card__body">
+						<p class="post-card__meta">Scheduling</p>
+						<h3>Why lead times on stainless stock matter more than labor</h3>
+						<p>Most delays on a fabrication job trace back to material lead time, not the shop floor. Planning around that upfront saves weeks later.</p>
+					</div>
+				</article>
+				<article class="post-card">
+					<div class="post-card__media"><img src="images/industrial_hero_1.jpg" alt="Welder at work"></div>
+					<div class="post-card__body">
+						<p class="post-card__meta">Safety</p>
+						<h3>The PPE checklist we run before every shift</h3>
+						<p>Nothing on this list is optional, regardless of who's asking or how tight the deadline is.</p>
+					</div>
+				</article>
+			</div>
+		</section>
+	</main>
 
-          <div class="collapse navbar-collapse" id="navbarsExample05">
-            <ul class="navbar-nav pl-md-5 ml-auto">
-              <li class="nav-item">
-                <a class="nav-link" href="index.html">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="about.html">About</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="projects.html">Projects</a>
-              </li>
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="services.html" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Services</a>
-                <div class="dropdown-menu" aria-labelledby="dropdown04">
-                  <a class="dropdown-item" href="services.html">Architectural Design</a>
-                  <a class="dropdown-item" href="services.html">Interior</a>
-                  <a class="dropdown-item" href="services.html">Building</a>
-                </div>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" href="blog.html">Blog</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="contact.html">Contact</a>
-              </li>
-            </ul>
+	<footer class="site-footer">
+		<div class="container footer__grid">
+			<div>
+				<p class="footer__logo">FORGE<span>WORKS</span></p>
+				<p class="lede">Steel fabrication and industrial manufacturing, built to spec.</p>
+			</div>
+			<div class="footer__col">
+				<h3>Site</h3>
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li><a href="about.html">About</a></li>
+					<li><a href="services.html">Services</a></li>
+					<li><a href="contact.html">Contact</a></li>
+				</ul>
+			</div>
+			<div class="footer__col">
+				<h3>Follow</h3>
+				<ul>
+					<li><a href="#">LinkedIn</a></li>
+					<li><a href="#">Instagram</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="container footer__bottom">
+			<p>&copy; 2026 Web Mastro. All rights reserved.</p>
+		</div>
+	</footer>
 
-            <div class="navbar-nav ml-auto">
-              <form method="post" class="search-form">
-                <span class="icon ion ion-search"></span>
-                <input type="text" class="form-control" placeholder="Search...">
-              </form>
-            </div>
-            
-          </div>
-        </div>
-      </nav>
-    </header>
-    <!-- END header -->
-
-    <div class="top-shadow"></div>
-    
-    <div class="inner-page">
-    <div class="slider-item" style="background-image: url('images/industrial_hero_3.jpg');">
-        
-        <div class="container">
-          <div class="row slider-text align-items-center justify-content-center">
-            <div class="col-md-8 text-center col-sm-12 element-animate pt-5">
-              <h1 class="pt-5"><span>Articles</span></h1>
-              <p class="mb-5 w-75">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Neque repudiandae cum qui, inventore deserunt, tenetur!</p>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </div>
-
-    
-
-    <section>
-      <div class="half d-md-flex d-block">
-        <div class="image" style="background-image: url('images/industrial_hero_1.jpg')"></div>
-        <div class="text text-center element-animate">
-          <span class="post-meta">June 8, 2018</span>
-          <h3 class="mb-4">Lorem ipsum dolor sit amet</h3>
-          <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis tempora inventore, aliquam ratione. Eum vero sapiente tempora eveniet perspiciatis libero, omnis quae facilis! Voluptatibus minima autem, esse eius natus labore.</p>
-          <p><a href="#" class="btn btn-primary btn-sm px-3 py-2">Continue Reading</a></p>
-        </div>
-      </div>
-
-      <div class="half d-md-flex d-block">
-        <div class="image order-2" style="background-image: url('images/industrial_hero_2.jpg')"></div>
-        <div class="text text-center element-animate">
-          <span class="post-meta">June 8, 2018</span>
-          <h3 class="mb-4">Lorem ipsum dolor sit amet</h3>
-          <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis tempora inventore, aliquam ratione. Eum vero sapiente tempora eveniet perspiciatis libero, omnis quae facilis! Voluptatibus minima autem, esse eius natus labore.</p>
-          
-          <p><a href="#" class="btn btn-primary btn-sm px-3 py-2">Continue Reading</a></p>
-        </div>
-      </div>
-
-      <div class="half d-md-flex d-block">
-        <div class="image" style="background-image: url('images/industrial_hero_1.jpg')"></div>
-        <div class="text text-center element-animate">
-          <span class="post-meta">June 8, 2018</span>
-          <h3 class="mb-4">Lorem ipsum dolor sit amet</h3>
-          <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis tempora inventore, aliquam ratione. Eum vero sapiente tempora eveniet perspiciatis libero, omnis quae facilis! Voluptatibus minima autem, esse eius natus labore.</p>
-          <p><a href="#" class="btn btn-primary btn-sm px-3 py-2">Continue Reading</a></p>
-        </div>
-      </div>
-
-      <div class="half d-md-flex d-block">
-        <div class="image order-2" style="background-image: url('images/industrial_hero_2.jpg')"></div>
-        <div class="text text-center element-animate">
-          <span class="post-meta">June 8, 2018</span>
-          <h3 class="mb-4">Lorem ipsum dolor sit amet</h3>
-          <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis tempora inventore, aliquam ratione. Eum vero sapiente tempora eveniet perspiciatis libero, omnis quae facilis! Voluptatibus minima autem, esse eius natus labore.</p>
-          
-          <p><a href="#" class="btn btn-primary btn-sm px-3 py-2">Continue Reading</a></p>
-        </div>
-      </div>
-      <div class="col-md-12 py-5 text-center bg-light">
-        <a href="#" class="btn btn-primary">Load More Posts...</a>
-      </div>
-    </section>
-
-    <section class="section bg-primary">
-      <div class="container">
-        <div class="row align-items-center">
-          <div class="col-lg-8">
-            <h2 class="text-white mb-0">Get Started With Industrial Free Template</h2>
-            <p class="text-white lead">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. .</p>
-          </div>
-          <div class="col-lg-4 text-lg-right">
-            <a href="#" class="btn btn-outline-white px-4 py-3">Download This Template</a>
-          </div>
-        </div>
-      </div>
-    </section>
-    <footer class="site-footer" role="contentinfo">
-      <div class="container">
-        <div class="row mb-5">
-          <div class="col-md-4 mb-5">
-            <h3>About The Industrial</h3>
-            <p class="mb-5">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. .</p>
-            <ul class="list-unstyled footer-link d-flex footer-social">
-              <li><a href="#" class="p-2"><span class="fa fa-twitter"></span></a></li>
-              <li><a href="#" class="p-2"><span class="fa fa-facebook"></span></a></li>
-              <li><a href="#" class="p-2"><span class="fa fa-linkedin"></span></a></li>
-              <li><a href="#" class="p-2"><span class="fa fa-instagram"></span></a></li>
-            </ul>
-
-          </div>
-          <div class="col-md-5 mb-5 pl-md-5">
-            <h3>Contact Info</h3>
-            <ul class="list-unstyled footer-link">
-              <li class="d-block">
-                <span class="d-block">Address:</span>
-                <span >34 Street Name, City Name Here, United States</span></li>
-              <li class="d-block"><span class="d-block">Telephone:</span><span >+1 242 4942 290</span></li>
-              <li class="d-block"><span class="d-block">Email:</span><span >info@yourdomain.com</span></li>
-            </ul>
-          </div>
-          <div class="col-md-3 mb-5">
-            <h3>Quick Links</h3>
-            <ul class="list-unstyled footer-link">
-              <li><a href="#">About</a></li>
-              <li><a href="#">Terms of Use</a></li>
-              <li><a href="#">Disclaimers</a></li>
-              <li><a href="#">Contact</a></li>
-            </ul>
-          </div>
-          <div class="col-md-3">
-          
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-12 text-md-center text-left">
-             <p class="copyright">
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            Copyright &copy;<script>document.write(new Date().getFullYear());</script> All rights reserved | This template is made with <i class="fa fa-heart text-danger" aria-hidden="true"></i> by <a href="https://colorlib.com" target="_blank" >Colorlib</a>
-            <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-            </p>
-          </div>
-        </div>
-      </div>
-    </footer>
-    <!-- END footer -->
-
-    <!-- loader -->
-    <div id="loader" class="show fullscreen"><svg class="circular" width="48px" height="48px"><circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee"/><circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10" stroke="#f4b214"/></svg></div>
-
-    <script src="js/jquery-3.2.1.min.js"></script>
-    <script src="js/popper.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-    <script src="js/owl.carousel.min.js"></script>
-    <script src="js/jquery.waypoints.min.js"></script>
-    <script src="js/jquery.fancybox.min.js"></script>
-    <script src="js/main.js"></script>
-
-    <script src="js/main.js"></script>
-    
-  </body>
+	<script src="js/forgeworks.js"></script>
+</body>
 </html>
